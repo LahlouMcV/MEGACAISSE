@@ -2,13 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Mm]emoryCaptures/
+Projet_Memoire/[Ll]ibrary/
+Projet_Memoire/[Tt]emp/
+Projet_Memoire/[Oo]bj/
+Projet_Memoire/[Bb]uild/
+Projet_Memoire/[Bb]uilds/
+Projet_Memoire/[Ll]ogs/
+Projet_Memoire/[Mm]emoryCaptures/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -58,3 +58,24 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+### FMOD Unity Integration ###
+# Never ignore DLLs in the FMOD subfolder, so make sure that the FMOD-folder is in the correct path.
+!/[Aa]ssets/Plugins/FMOD/**/*.dll
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor
+!/[Aa}ssets/Gizmos/FMOD/*
+!/[Aa}ssets/Editor Default Resources/FMOD/*
+
+# Ignore the Cache-file since it is updated locally either way
+/[Aa]ssets/**/FMODStudioCache.asset
+/[Aa]ssets/**/FMODStudioCache.asset.meta
+/[Aa]ssets/Plugins/FMOD/Cache.meta
+/[Aa]ssets/Plugins/FMOD/Cache/Editor.meta
+
+# Log-files
+fmod.log
+fmod_editor.log
+
+# FMOD 1.10.x (Legacy)
+/Assets/FMODAssets/*
+/Assets/FMODStudioCache.meta
