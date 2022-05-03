@@ -10,8 +10,9 @@ namespace StarterAssets
 		[Header("Character Input Values")]
 		public Vector2 move;
 		public Vector2 look;
-		public bool jump;
 		public bool sprint;
+		public bool LeftClick;
+		public bool RightClick;
 
 		[Header("Movement Settings")]
 		public bool analogMovement;
@@ -36,19 +37,23 @@ namespace StarterAssets
 			}
 		}
 
-		public void OnJump(InputValue value)
-		{
-			JumpInput(value.isPressed);
-		}
-
 		public void OnSprint(InputValue value)
 		{
 			SprintInput(value.isPressed);
 		}
+
+		public void OnChangeMode(InputValue value)
+        {
+			RightClickInput(value.isPressed);
+        }
+
+		public void OnClick(InputValue value)
+        {
+			ClickInput(value.isPressed);
+        }
 #else
 	// old input sys if we do decide to have it (most likely wont)...
 #endif
-
 
 		public void MoveInput(Vector2 newMoveDirection)
 		{
@@ -60,15 +65,21 @@ namespace StarterAssets
 			look = newLookDirection;
 		}
 
-		public void JumpInput(bool newJumpState)
-		{
-			jump = newJumpState;
-		}
 
 		public void SprintInput(bool newSprintState)
 		{
 			sprint = newSprintState;
 		}
+
+		public void ClickInput(bool newClickState)
+        {
+			LeftClick = newClickState;
+        }
+
+		public void RightClickInput(bool newRightClickState)
+        {
+			RightClick = newRightClickState;
+        }
 
 #if !UNITY_IOS || !UNITY_ANDROID
 
