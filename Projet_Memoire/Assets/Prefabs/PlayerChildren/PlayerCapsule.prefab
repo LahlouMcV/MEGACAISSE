@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 8997996947095583982}
   - component: {fileID: 8616685848737228382}
   - component: {fileID: 978938591236251183}
+  - component: {fileID: 4518446632850724617}
   - component: {fileID: 8616685848737228371}
   - component: {fileID: 1978471637655604388}
   - component: {fileID: 5420857361349278248}
@@ -201,6 +202,21 @@ MonoBehaviour:
   currentInteractionState: 0
   firstPersonController: {fileID: 8616685848737228371}
   FeedbackManager: {fileID: 0}
+  grabAndDrop: {fileID: 4518446632850724617}
+--- !u!114 &4518446632850724617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616685848737228372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28053ebbe0f392f4db2e7c4117f35b17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  ObjectGrabbed: 0
 --- !u!114 &8616685848737228371
 MonoBehaviour:
   m_ObjectHideFlags: 0

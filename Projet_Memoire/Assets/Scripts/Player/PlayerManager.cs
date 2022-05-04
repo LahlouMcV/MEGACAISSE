@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     [Header("ReferenceScripts")]
     [SerializeField] private StarterAssets.FirstPersonController firstPersonController;
     [SerializeField] private UI_InteractionFeedbackManager FeedbackManager;
+    [SerializeField] private PlayerGrabAndDrop grabAndDrop;
 
     private InputAction RightClick;
     private InputAction LeftClick;
@@ -50,6 +51,7 @@ public class PlayerManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             FeedbackManager.LaunchInteractionMode();
+            grabAndDrop.Active = false;
         }
         else
         {
@@ -58,6 +60,7 @@ public class PlayerManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
             FeedbackManager.StopInteractionMode();
+            grabAndDrop.Active = true;
         }
         
     }
