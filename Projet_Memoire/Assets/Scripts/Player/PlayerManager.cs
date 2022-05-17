@@ -10,13 +10,15 @@ public class PlayerManager : MonoBehaviour
     [Header("current Stats")]
     public PlayerInteractionState currentInteractionState;
 
+    [Header("Vehicle")]
+    [SerializeField] private Transform Vehicle;
+
     [Header("ReferenceScripts")]
     [SerializeField] private StarterAssets.FirstPersonController firstPersonController;
     [SerializeField] private UI_InteractionFeedbackManager FeedbackManager;
     [SerializeField] private PlayerGrabAndDrop grabAndDrop;
 
     private InputAction RightClick;
-    private InputAction LeftClick;
     private bool RightClickOnce = false;
 
     //Creation of input actions for the changing of modes

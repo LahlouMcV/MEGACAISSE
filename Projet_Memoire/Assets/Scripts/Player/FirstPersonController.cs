@@ -11,6 +11,7 @@ namespace StarterAssets
 #endif
 	public class FirstPersonController : MonoBehaviour
 	{
+		[SerializeField] private PlayerManager playerManager;
 		public bool Active = true;
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -100,7 +101,7 @@ namespace StarterAssets
             {
 				GravityManager();
 				GroundedCheck();
-				Move();
+				//Move();
 			}
 		}
 
