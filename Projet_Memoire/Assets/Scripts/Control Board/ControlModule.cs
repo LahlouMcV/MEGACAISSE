@@ -6,5 +6,11 @@ using UnityEngine;
 public class ControlModule : MonoBehaviour
 {
     public bool OnSlot = false;
+    public bool Active = false;
+    public virtual float InputValue()
+    {
+        float f = 0f;
+        return f;
+    }
 
 }

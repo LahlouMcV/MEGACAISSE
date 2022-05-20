@@ -3422,6 +3422,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.375
       objectReference: {fileID: 0}
+    - target: {fileID: 3236717364550346705, guid: 274a326b76e9a0c4094e348de6581a2c, type: 3}
+      propertyPath: Damping.z
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3236717365179979281, guid: 274a326b76e9a0c4094e348de6581a2c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.20000005

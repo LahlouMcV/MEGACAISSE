@@ -13,7 +13,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
     private InputAction LeftClick;
     private RaycastHit hit;
     private RaycastHit slotHit;
-    private Rigidbody Interactable;
+    public Rigidbody Interactable;
     private Vector3 CursorPosition;
     private Slot HighlightedSlot;
 
@@ -50,6 +50,10 @@ public class PlayerGrabAndDrop : MonoBehaviour
             {
                 Debug.Log("I hit something");
                 Interactable = hit.collider.GetComponent<Rigidbody>();
+            }
+            else if (hit.collider == null && ObjectGrabbed == false)
+            {
+                Interactable = null;
             }
 
             //Launch a raycast to check the slot layer
@@ -108,6 +112,11 @@ public class PlayerGrabAndDrop : MonoBehaviour
             ObjectGrabbed = false;
             HighlightedSlot.PlugModule(Interactable.GetComponent<ControlModule>());
             Interactable = null;
+        }
+        else if (ObjectGrabbed == false && HighlightedSlot != null && Interactable != null)
+        {
+            ObjectGrabbed = true;
+            HighlightedSlot.RemoveModule();
         }
     }
 }
