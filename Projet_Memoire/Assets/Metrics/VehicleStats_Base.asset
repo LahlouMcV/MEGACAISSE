@@ -16,5 +16,5 @@ MonoBehaviour:
   Drag: 10
   TurnSpeed: 20
   StraffingDistance: 20
-  Acceleration: 10
+  Acceleration: 150
   Breaks: 50

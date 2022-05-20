@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Interactable
   - Slot
+  - Controller_Module
   layers:
   - Default
   - TransparentFX

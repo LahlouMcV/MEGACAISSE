@@ -5,5 +5,5 @@ using UnityEngine;
 public class VehicleManager : MonoBehaviour
 {
     public VehicleStats _VehicleStats;
-    
+    public VehicleMovement _VehicleMovement;
 }
