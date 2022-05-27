@@ -48,7 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e0dec5847e6975458346c0439777c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainTransform: {fileID: 2482808057061712233}
+  Rigidbody: {fileID: 2482808057061712232}
+  currentInputValue: 0
   OnSlot: 0
+  linkedSlot: {fileID: 0}
 --- !u!33 &2482808057061712234
 MeshFilter:
   m_ObjectHideFlags: 0

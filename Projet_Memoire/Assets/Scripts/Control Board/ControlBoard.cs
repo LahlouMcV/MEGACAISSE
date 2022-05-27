@@ -18,5 +18,9 @@ public class ControlBoard : MonoBehaviour
         _VehicleManager._VehicleMovement.Rotate(_SlotGroupe.TurnRight.currentInputValue);
 
         _VehicleManager._VehicleMovement.Rotate(-_SlotGroupe.TurnLeft.currentInputValue);
+
+        _VehicleManager._VehicleMovement.Straff(_SlotGroupe.StraffRight.currentInputValue);
+
+        _VehicleManager._VehicleMovement.Straff(-_SlotGroupe.StraffLeft.currentInputValue);
     }
 }

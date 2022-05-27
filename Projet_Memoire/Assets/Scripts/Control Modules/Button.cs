@@ -6,7 +6,7 @@ public class Button : ControlModule
 {
     public override void ActivateFunction()
     {
-        
+        Debug.Log("Button Activated");
         base.ActivateFunction();
         ChangeInputValue(1f);
     }

@@ -5,8 +5,10 @@ using UnityEngine;
 public class ControlModule : MonoBehaviour
 {
     public Transform MainTransform;
+    public Rigidbody Rigidbody;
     public float currentInputValue = 0f;
     public bool OnSlot = false;
+    public Slot linkedSlot = null;
 
     public virtual float InputValue()
     {

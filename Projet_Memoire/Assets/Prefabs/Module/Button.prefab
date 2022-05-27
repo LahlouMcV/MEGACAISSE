@@ -226,5 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainTransform: {fileID: 1080248914402700578}
+  Rigidbody: {fileID: 6260285132550653442}
   currentInputValue: 0
   OnSlot: 0
+  linkedSlot: {fileID: 0}
