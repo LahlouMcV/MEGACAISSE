@@ -107,7 +107,7 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
-			if(Active)
+			if (Active)
             {
 				CameraRotation();
 			}
@@ -122,6 +122,10 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
+			Camera.main.transform.Rotate(Mouse.current.delta.ReadValue().y, 0, 0, Space.Self);
+			Camera.main.transform.Rotate(0, Mouse.current.delta.ReadValue().x, 0, Space.World);
+
+			return;
 			// if there is an input
 			if (_input.look.sqrMagnitude >= _threshold)
 			{

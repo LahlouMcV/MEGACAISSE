@@ -93,12 +93,14 @@ public class PlayerGrabAndDrop : MonoBehaviour
                         ((_GroundHit.point - this.transform.position).normalized * -0.25f);
                     CursorPosition += this.transform.position;
                 }
-                Interactable.Rigidbody.MovePosition(Vector3.Lerp(Interactable.MainTransform.position, CursorPosition, 0.1f));
+                Interactable.MainTransform.position = Vector3.Lerp(Interactable.MainTransform.position, CursorPosition, 0.1f);
             }
         }
         else
         {
             Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.blue);
+            
             Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
             if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
             {
@@ -148,6 +150,8 @@ public class PlayerGrabAndDrop : MonoBehaviour
             if(module != null)
             {
                 Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.magenta, 1000000);
+                //Debug.Break();
                 Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
                 if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
                 {
@@ -178,6 +182,13 @@ public class PlayerGrabAndDrop : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.skin.label.fontSize = 72;
+        GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
+        GUILayout.Label("Target cursor world pos : " + CursorPosition);
     }
 
 

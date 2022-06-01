@@ -17,8 +17,11 @@ public class VehicleMovement : MonoBehaviour
     //Update position based on the current speed of the vehicle
     private void LateUpdate()
     {
-        this.transform.position = this.transform.position + (DirectionVector.normalized * currentSpeed * Time.deltaTime);
-        DirectionVector = Vector3.zero;
+        this.transform.position += (DirectionVector.normalized * currentSpeed * Time.deltaTime);
+        if(currentSpeed == 0)
+        {
+            DirectionVector = Vector3.zero;
+        }
     }
 
     //Function that accelerates the vehicle
@@ -31,7 +34,7 @@ public class VehicleMovement : MonoBehaviour
         }
         else if (input != 0 && breaking == false)
         {
-            DirectionVector += this.transform.forward;
+            DirectionVector = input * this.transform.forward;
             currentSpeed += vehicleManager._VehicleStats.Acceleration * Time.deltaTime * input;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
             accelerate = true;
