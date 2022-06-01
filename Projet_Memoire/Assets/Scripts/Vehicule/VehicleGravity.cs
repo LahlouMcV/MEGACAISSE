@@ -5,6 +5,7 @@ using UnityEngine;
 public class VehicleGravity : MonoBehaviour
 {
     [SerializeField] private VehicleManager _VehicleManager;
+    [SerializeField] private Transform _Bumper;
     private float currentForce;
 
     private RaycastHit GroundHit;
@@ -12,20 +13,23 @@ public class VehicleGravity : MonoBehaviour
     void Update()
     {
         
-        Ray ray = new Ray(this.transform.position, -this.transform.up);
+        Ray ray = new Ray(_Bumper.position, -this.transform.up);
         Physics.Raycast(ray,out GroundHit, Mathf.Infinity, LayerMask.GetMask("Ground"));
-        if (GroundHit.collider != null && GroundHit.collider.CompareTag("Ground") && Vector3.Distance(this.transform.position, GroundHit.point) <= 5f)
+        if (GroundHit.collider != null && GroundHit.collider.CompareTag("Ground") && Vector3.Distance(_Bumper.position, GroundHit.point) <= 5f)
         {
             RaiseVehicle();
         }
-        else if(Vector3.Distance(this.transform.position, GroundHit.point) > 5f)
+        else if(Vector3.Distance(_Bumper.position, GroundHit.point) > 5f)
         {
             ApplyGravity();
         }
-
-        /*this.transform.rotation = Quaternion.Lerp(this.transform.rotation, 
-            Quaternion.Euler(new Vector3(GroundHit.transform.rotation.x, this.transform.rotation.y, this.transform.rotation.z)), 
-            0.01f);*/
+        if(GroundHit.collider != null)
+        {
+            this.transform.rotation = Quaternion.Lerp(this.transform.rotation,
+                Quaternion.Euler(new Vector3(GroundHit.transform.rotation.eulerAngles.x, this.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z)),
+                0.01f);
+        }
+        
         this.transform.position += (currentForce * this.transform.up * Time.deltaTime);
     }
 
