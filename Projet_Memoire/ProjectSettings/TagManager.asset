@@ -8,6 +8,7 @@ TagManager:
   - Interactable
   - Slot
   - Controller_Module
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - UI
   - Interactable
   - Slot
-  - 
+  - Ground
   - 
   - 
   - 

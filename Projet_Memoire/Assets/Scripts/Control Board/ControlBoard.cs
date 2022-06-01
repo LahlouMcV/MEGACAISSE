@@ -8,7 +8,7 @@ public class ControlBoard : MonoBehaviour
 
     public SlotGroupe _SlotGroupe;
 
-    private void Update()
+    private void LateUpdate()
     {
         //Movement functions
         _VehicleManager._VehicleMovement.Accelerate(_SlotGroupe.Accelerate.currentInputValue);

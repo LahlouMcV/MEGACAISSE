@@ -176,7 +176,7 @@
                     "id": "ed66cbff-2900-4a62-8896-696503cfcd31",
                     "path": "<Pointer>/delta",
                     "interactions": "",
-                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0.08,y=0.08)",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2",
                     "groups": "KeyboardMouse",
                     "action": "Look",
                     "isComposite": false,

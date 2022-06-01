@@ -15,4 +15,5 @@ public class VehicleStats : ScriptableObject
     public float StraffingDistance;
     public float Acceleration;
     public float Breaks;
+    public float Gravity;
 }
