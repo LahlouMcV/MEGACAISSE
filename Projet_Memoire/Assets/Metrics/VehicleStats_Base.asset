@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d035784799aff04da98c79475d24f0c, type: 3}
   m_Name: VehicleStats_Base
   m_EditorClassIdentifier: 
-  MaxSpeed: 40
+  MaxSpeed: 60
   Drag: 8
-  TurnSpeed: 20
-  StraffingDistance: 20
+  TurnSpeed: 50
+  StraffingDistance: 40
   Acceleration: 150
   Breaks: 50
   Gravity: 19.6
