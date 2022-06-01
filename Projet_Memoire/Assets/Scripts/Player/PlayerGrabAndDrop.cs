@@ -17,7 +17,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
     private InputAction LeftClick;
     private RaycastHit hit;
     private RaycastHit slotHit;
-    private Rigidbody Interactable;
+    [SerializeField] private ControlModule Interactable;
     private Vector3 CursorPosition;
     private Slot HighlightedSlot;
     public ControlModule module;
@@ -53,10 +53,9 @@ public class PlayerGrabAndDrop : MonoBehaviour
 
 
             //If there's a collider than it is possible to grab the object
-            if (hit.collider != null && hit.collider.CompareTag("Interactable"))
+            if (hit.collider != null && hit.collider.CompareTag("Interactable") && ObjectGrabbed == false)
             {
-                Debug.Log("I hit something");
-                Interactable = hit.collider.GetComponent<Rigidbody>();
+                Interactable = hit.collider.GetComponentInChildren<ControlModule>();
             }
             else if (hit.collider == null && ObjectGrabbed == false)
             {
@@ -70,7 +69,6 @@ public class PlayerGrabAndDrop : MonoBehaviour
             //If there's a collider than it is possible to drop the object onto the slot
             if (slotHit.collider != null && slotHit.collider.CompareTag("Slot"))
             {
-                Debug.Log("Found a slot");
                 HighlightedSlot = slotHit.collider.GetComponent<Slot>();
             }
             else if (slotHit.collider == null)
@@ -95,12 +93,14 @@ public class PlayerGrabAndDrop : MonoBehaviour
                         ((_GroundHit.point - this.transform.position).normalized * -0.25f);
                     CursorPosition += this.transform.position;
                 }
-                Interactable.MovePosition(Vector3.Lerp(Interactable.transform.position, CursorPosition, 0.1f));
+                Interactable.MainTransform.position = Vector3.Lerp(Interactable.MainTransform.position, CursorPosition, 0.1f);
             }
         }
         else
         {
             Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.blue);
+            
             Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
             if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
             {
@@ -117,36 +117,41 @@ public class PlayerGrabAndDrop : MonoBehaviour
     {
         if(Active)
         {
-            Debug.Log("Try to grab");
             if (Interactable != null && ObjectGrabbed == false)
             {
+                if (Interactable.OnSlot)
+                {
+                    Interactable.linkedSlot.RemoveModule();
+                }
                 ObjectGrabbed = true;
-                Interactable.isKinematic = true;
+                Interactable.Rigidbody.isKinematic = true;
             }
             else if (ObjectGrabbed == true && HighlightedSlot == null)
             {
                 ObjectGrabbed = false;
-                Interactable.isKinematic = false;
+                Interactable.Rigidbody.isKinematic = false;
                 Interactable = null;
             }
             else if (ObjectGrabbed == true && HighlightedSlot != null)
             {
                 ObjectGrabbed = false;
-                HighlightedSlot.PlugModule(Interactable.GetComponentInChildren<ControlModule>());
+                HighlightedSlot.PlugModule(Interactable);
                 Interactable = null;
             }
             else if (ObjectGrabbed == false && HighlightedSlot != null && Interactable != null)
             {
                 ObjectGrabbed = true;
-                HighlightedSlot.RemoveModule();
+                Interactable.Rigidbody.isKinematic = true;
+                Interactable.linkedSlot.RemoveModule();
             }
         }
         else
         {
             if(module != null)
             {
-                Debug.Log("I Click BUTTON!!!!!!!");
                 Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.magenta, 1000000);
+                //Debug.Break();
                 Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
                 if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
                 {
@@ -164,7 +169,6 @@ public class PlayerGrabAndDrop : MonoBehaviour
         
         if (Active == false && module != null)
         {
-            Debug.Log("I Deactivate BUTTON!!!!!!!");
             module.DeactivateFunction();
             StopCoroutine(LeftMouseButtonHeld());
             module = null;
@@ -178,6 +182,13 @@ public class PlayerGrabAndDrop : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    void OnGUI()
+    {
+        GUI.skin.label.fontSize = 72;
+        GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
+        GUILayout.Label("Target cursor world pos : " + CursorPosition);
     }
 
 

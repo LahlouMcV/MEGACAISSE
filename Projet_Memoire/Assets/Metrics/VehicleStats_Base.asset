@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: VehicleStats_Base
   m_EditorClassIdentifier: 
   MaxSpeed: 20
-  Drag: 10
+  Drag: 8
   TurnSpeed: 20
   StraffingDistance: 20
   Acceleration: 150
   Breaks: 50
+  Gravity: 0.98

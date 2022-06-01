@@ -8,7 +8,7 @@ public class ControlBoard : MonoBehaviour
 
     public SlotGroupe _SlotGroupe;
 
-    private void Update()
+    private void LateUpdate()
     {
         //Movement functions
         _VehicleManager._VehicleMovement.Accelerate(_SlotGroupe.Accelerate.currentInputValue);
@@ -18,5 +18,9 @@ public class ControlBoard : MonoBehaviour
         _VehicleManager._VehicleMovement.Rotate(_SlotGroupe.TurnRight.currentInputValue);
 
         _VehicleManager._VehicleMovement.Rotate(-_SlotGroupe.TurnLeft.currentInputValue);
+
+        _VehicleManager._VehicleMovement.Straff(_SlotGroupe.StraffRight.currentInputValue);
+
+        _VehicleManager._VehicleMovement.Straff(-_SlotGroupe.StraffLeft.currentInputValue);
     }
 }

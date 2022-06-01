@@ -10,10 +10,18 @@ public class VehicleMovement : MonoBehaviour
     private bool breaking;
     private bool accelerate;
 
+    public Vector3 DirectionVector;
+
+
+
     //Update position based on the current speed of the vehicle
-    private void Update()
+    private void LateUpdate()
     {
-        this.transform.position = this.transform.position + (this.transform.forward * currentSpeed * Time.deltaTime);
+        this.transform.position += (DirectionVector.normalized * currentSpeed * Time.deltaTime);
+        if(currentSpeed == 0)
+        {
+            DirectionVector = Vector3.zero;
+        }
     }
 
     //Function that accelerates the vehicle
@@ -26,6 +34,7 @@ public class VehicleMovement : MonoBehaviour
         }
         else if (input != 0 && breaking == false)
         {
+            DirectionVector = input * this.transform.forward;
             currentSpeed += vehicleManager._VehicleStats.Acceleration * Time.deltaTime * input;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
             accelerate = true;
@@ -58,7 +67,12 @@ public class VehicleMovement : MonoBehaviour
 
     public void Straff(float input)
     {
-
+        if(input != 0)
+        {
+            DirectionVector += input * this.transform.right;
+            currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.deltaTime;
+            currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
+        }
     }
 
     //Function that rotates the vehicle around the up axis
