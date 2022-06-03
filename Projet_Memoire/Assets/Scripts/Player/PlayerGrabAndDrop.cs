@@ -64,7 +64,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
 
             //Launch a raycast to check the slot layer
             Ray _rayForSlot = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Physics.Raycast(_rayForSlot, out slotHit, 3, LayerMask.GetMask("Slot"));
+            Physics.Raycast(_rayForSlot, out slotHit, Mathf.Infinity, LayerMask.GetMask("Slot"));
 
             //If there's a collider than it is possible to drop the object onto the slot
             if (slotHit.collider != null && slotHit.collider.CompareTag("Slot"))
@@ -84,7 +84,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
             {
                 //Launch raycast checking the ground to drop it and adjust position accordinginly
                 RaycastHit _GroundHit;
-                Physics.Raycast(_ray, out _GroundHit, 3, LayerMask.GetMask("Default"));
+                Physics.Raycast(_ray, out _GroundHit, Mathf.Infinity, LayerMask.GetMask("Default"));
 
                 //Change position 
                 if (_GroundHit.collider != null && Vector3.Distance(this.transform.position, _GroundHit.point) < Vector3.Distance(this.transform.position, CursorPosition))
@@ -184,12 +184,12 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
     }
 
-    void OnGUI()
+    /*void OnGUI()
     {
         GUI.skin.label.fontSize = 72;
         GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
         GUILayout.Label("Target cursor world pos : " + CursorPosition);
-    }
+    }*/
 
 
 }
