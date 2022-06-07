@@ -9,6 +9,8 @@ TagManager:
   - Slot
   - Controller_Module
   - Ground
+  - Wall
+  - Obstacle
   layers:
   - Default
   - TransparentFX
