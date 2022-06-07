@@ -8,12 +8,14 @@ public class VehicleStats : ScriptableObject
 {
     //All these stats are multipliers
     //Actual stats of the vehicle are defined by the control module of the board
-    [Header("General Stats")]
+    [Header("Mouvement")]
     public float MaxSpeed;
-    public float Drag;
+    public float Breaks;
     public float TurnSpeed;
     public float StraffingDistance;
     public float Acceleration;
-    public float Breaks;
+
+    [Header("Physics")]
+    public float Drag;
     public float Gravity;
 }
