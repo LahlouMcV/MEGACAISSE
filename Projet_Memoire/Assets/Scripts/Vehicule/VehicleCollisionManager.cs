@@ -27,6 +27,36 @@ public class VehicleCollisionManager : MonoBehaviour
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(-30, this.transform.up);
                 break;
             case HitBoxSide.Forward:
+                RaycastHit hit;
+                Ray ray = new Ray(this.transform.position, this.transform.forward);
+                if(Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+                {
+                    Debug.Log(hit.normal);
+                    if(hit.collider !=null && Vector3.Angle(this.transform.forward,  -hit.normal) <= 30)
+                    {
+                        Debug.Log("Case 1");
+                        _VehicleManager._VehicleMovement.currentSpeed = -40;
+                        aimPosition = this.transform.position - this.transform.forward * 2;
+                        aimRotation = this.transform.rotation;
+                    }
+                    else if(hit.collider != null && Vector3.Angle(this.transform.forward, -hit.normal) > 30)
+                    {
+                        Debug.Log("Case 2");
+                        Vector3 wallPos = this.transform.worldToLocalMatrix * hit.point;
+                        _VehicleManager._VehicleMovement.currentSpeed = 0;
+                        int i = 0;
+                        if (wallPos.x > 0)
+                        {
+                            i = 1;
+                        }
+                        else if (wallPos.x < 0)
+                        {
+                            i = -1;
+                        }
+                        aimPosition = this.transform.position - this.transform.forward * 2;
+                        aimRotation = this.transform.rotation * Quaternion.AngleAxis(30 * i, this.transform.up);
+                    }
+                }
                 break;
             case HitBoxSide.Back:
                 break;
