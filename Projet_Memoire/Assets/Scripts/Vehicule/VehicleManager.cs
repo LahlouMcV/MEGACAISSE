@@ -23,6 +23,40 @@ public class VehicleManager : MonoBehaviour
         MainHealthPoints -= amount;
     }
 
+    public void HurtAllSides(float amount)
+    {
+        bool a = false;
+        if (LeftSideHealth > 0)
+            LeftSideHealth -= amount;
+        else if(LeftSideHealth <= 0 && a == false)
+        {
+            a = true;
+            MainHealthPoints -= amount;
+        }
+        if (RightSideHealth > 0)
+            RightSideHealth -= amount;
+        else if (RightSideHealth <= 0 && a == false)
+        {
+            a = true;
+            MainHealthPoints -= amount;
+        }
+        if (FrontSideHealth > 0)
+            FrontSideHealth -= amount;
+        else if (FrontSideHealth <= 0 && a == false)
+        {
+            a = true;
+            MainHealthPoints -= amount;
+        }
+        if (BackSideHealth > 0)
+            BackSideHealth -= amount;
+        else if (BackSideHealth <= 0 && a == false)
+        {
+            a = true;
+            MainHealthPoints -= amount;
+        }
+
+    }
+
     public void HurtSide(float amount, VehicleCollisionManager.HitBoxSide side)
     {
         switch (side)

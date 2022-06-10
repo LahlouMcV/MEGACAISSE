@@ -11,7 +11,7 @@ public class VehicleCollisionManager : MonoBehaviour
     {
         Vector3 aimPosition = Vector3.zero;
         Quaternion aimRotation = Quaternion.identity;
-        Debug.Log("Hit Wall on " + side + "Side");
+        _VehicleManager.HurtSide(_VehicleManager._VehicleStats.DamageWhenWallCollision, side);
         switch (side)
         {
             case HitBoxSide.Up:
@@ -115,6 +115,7 @@ public class VehicleCollisionManager : MonoBehaviour
             case HitBoxSide.Down:
                 this.transform.position += this.transform.up * 2;
                 _VehicleManager._VehicleGravity.currentForce = 0;
+                _VehicleManager.HurtAllSides(_VehicleManager._VehicleStats.FallDamage);
                 break;
             case HitBoxSide.Left:
                 break;
