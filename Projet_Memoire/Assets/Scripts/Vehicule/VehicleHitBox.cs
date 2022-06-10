@@ -11,7 +11,7 @@ public class VehicleHitBox : MonoBehaviour
     {
         if(other.CompareTag("Obstacle"))
         {
-            _VehicleCollisionManager.CollidedWithObstacle(this.Side);
+            _VehicleCollisionManager.CollidedWithObstacle(this.Side, other.transform);
         }
         else if(other.CompareTag("Wall"))
         {

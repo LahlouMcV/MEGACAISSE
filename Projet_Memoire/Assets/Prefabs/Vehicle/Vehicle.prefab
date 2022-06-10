@@ -74,8 +74,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.625515, y: 1.6840602, z: 19.839003}
-  m_Center: {x: -0.12742996, y: -0.34203005, z: 0.008494377}
+  m_Size: {x: 8.625515, y: 2.568774, z: 21.952896}
+  m_Center: {x: -0.12742996, y: 0.100327075, z: 0.008494377}
 --- !u!1 &2376711138401979054
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,8 +201,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.625515, y: 1.6840602, z: 19.839003}
-  m_Center: {x: -0.12742996, y: -0.34203005, z: 0.008494377}
+  m_Size: {x: 8.625515, y: 1.9784329, z: 21.436666}
+  m_Center: {x: -0.12742996, y: -0.48921645, z: 0.008494377}
 --- !u!1 &4829077471498506762
 GameObject:
   m_ObjectHideFlags: 0
@@ -1062,6 +1062,11 @@ MonoBehaviour:
   _VehicleStats: {fileID: 11400000, guid: 2041df86552f5504a9216f1ec5f257c5, type: 2}
   _VehicleMovement: {fileID: 6294909625220221583}
   _VehicleGravity: {fileID: 6294909625220221581}
+  MainHealthPoints: 100
+  RightSideHealth: 25
+  LeftSideHealth: 25
+  FrontSideHealth: 25
+  BackSideHealth: 25
 --- !u!114 &6294909625220221583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,6 +1096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _VehicleManager: {fileID: 6294909625220221582}
   _Bumper: {fileID: 2023109031}
+  currentForce: 0
 --- !u!114 &5868807147356398920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1103,6 +1109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba830dc5d04e844a3fd51ea20e7072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _VehicleManager: {fileID: 0}
 --- !u!1 &6294909625491557617
 GameObject:
   m_ObjectHideFlags: 0
