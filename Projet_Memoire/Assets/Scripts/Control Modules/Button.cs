@@ -6,14 +6,12 @@ public class Button : ControlModule
 {
     public override void ActivateFunction()
     {
-        Debug.Log("Button Activated");
         base.ActivateFunction();
         ChangeInputValue(1f);
     }
 
     public override void DeactivateFunction()
     {
-        Debug.Log("Button Deactivated");
         base.DeactivateFunction();
         ChangeInputValue(0f);
     }
