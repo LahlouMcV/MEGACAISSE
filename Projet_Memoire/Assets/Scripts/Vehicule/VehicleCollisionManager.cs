@@ -98,9 +98,12 @@ public class VehicleCollisionManager : MonoBehaviour
         Invoke("StopTheCoroutines", 0.1f);
     }
 
-    public void CollidedWithObstacle(HitBoxSide side)
+    public void CollidedWithObstacle(HitBoxSide side, Transform obstacle)
     {
-
+        Debug.Log("Obstacle hit " + side + " side");
+        Obstacle hitObstacle = obstacle.GetComponent<Obstacle>();
+        _VehicleManager.HurtSide(hitObstacle.Damage, side);
+        Destroy(obstacle.gameObject);
     }
 
     public void CollidedWithGround(HitBoxSide side)
