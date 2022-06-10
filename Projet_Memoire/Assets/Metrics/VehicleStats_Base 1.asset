@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d035784799aff04da98c79475d24f0c, type: 3}
-  m_Name: VehicleStats_Base
+  m_Name: VehicleStats_Base 1
   m_EditorClassIdentifier: 
   MaxSpeed: 40
   Breaks: 50
