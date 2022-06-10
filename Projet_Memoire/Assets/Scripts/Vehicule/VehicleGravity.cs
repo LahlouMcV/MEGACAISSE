@@ -6,7 +6,7 @@ public class VehicleGravity : MonoBehaviour
 {
     [SerializeField] private VehicleManager _VehicleManager;
     [SerializeField] private Transform _Bumper;
-    private float currentForce;
+    public float currentForce;
 
     private RaycastHit GroundHit;
 

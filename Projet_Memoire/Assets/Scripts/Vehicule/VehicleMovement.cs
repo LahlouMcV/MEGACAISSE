@@ -28,7 +28,7 @@ public class VehicleMovement : MonoBehaviour
     //If the input is 0 and the speed is greater than 0, the vehicle slows down depending on the drag stat
     public void Accelerate(float input)
     {
-        if (input == 0 && currentSpeed > 0)
+        if (input == 0 && currentSpeed > 0 && accelerate == false)
         {
             currentSpeed -= vehicleManager._VehicleStats.Drag * Time.deltaTime;
         }
@@ -39,7 +39,8 @@ public class VehicleMovement : MonoBehaviour
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
             accelerate = true;
         }
-        else if (input == 0)
+
+        if (input == 0)
         {
             accelerate = false;
         }
@@ -49,17 +50,19 @@ public class VehicleMovement : MonoBehaviour
     //If the input is 0 and the speed is negative, the vehicle slows down depending on the drag stat
     public void Break(float input)
     {
-        if(input == 0 && currentSpeed < 0 && accelerate == false)
+        if(input == 0 && currentSpeed < 0 && accelerate == false && breaking == false)
         {
             currentSpeed += vehicleManager._VehicleStats.Drag * Time.deltaTime;
         }
-        else if (input != 0)
+        else if (input != 0 && (accelerate == false || accelerate == true))
         {
+            Debug.Log("OVERHERE!!!");
+            DirectionVector = input * this.transform.forward;
             currentSpeed -= vehicleManager._VehicleStats.Breaks * Time.deltaTime * input;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
             breaking = true;
         }
-        else if (input == 0)
+        if (input == 0)
         {
             breaking = false;
         }
