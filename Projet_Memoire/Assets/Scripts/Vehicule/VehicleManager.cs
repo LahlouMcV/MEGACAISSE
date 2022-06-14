@@ -95,6 +95,7 @@ public class VehicleManager : MonoBehaviour
 
     public void Defeat()
     {
-
+        SceneManager._SceneManager.LoadScene(0);
     }
+
 }
