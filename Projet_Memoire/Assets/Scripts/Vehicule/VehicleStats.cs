@@ -18,6 +18,10 @@ public class VehicleStats : ScriptableObject
     [Header("Physics")]
     public float Drag;
     public float Gravity;
+    public float FreefallGravity;
+    public float TerminalVelocity;
+    public float FloatForce;
+    public float FloatHeight;
 
     [Header("Damage")]
     public float DamageWhenWallCollision;

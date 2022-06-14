@@ -15,11 +15,12 @@ public class VehicleGravity : MonoBehaviour
         
         Ray ray = new Ray(_Bumper.position, -this.transform.up);
         Physics.Raycast(ray,out GroundHit, Mathf.Infinity, LayerMask.GetMask("Ground"));
-        if (GroundHit.collider != null && GroundHit.collider.CompareTag("Ground") && Vector3.Distance(_Bumper.position, GroundHit.point) <= 5f)
+        if (GroundHit.collider != null && GroundHit.collider.CompareTag("Ground") && 
+            Vector3.Distance(_Bumper.position, GroundHit.point) <= _VehicleManager._VehicleStats.FloatHeight)
         {
             RaiseVehicle();
         }
-        else if(Vector3.Distance(_Bumper.position, GroundHit.point) > 5f)
+        else if(Vector3.Distance(_Bumper.position, GroundHit.point) > _VehicleManager._VehicleStats.FloatHeight)
         {
             ApplyGravity();
         }
@@ -35,7 +36,7 @@ public class VehicleGravity : MonoBehaviour
 
     private void RaiseVehicle()
     {
-        currentForce += _VehicleManager._VehicleStats.Gravity * Time.deltaTime;
+        currentForce += _VehicleManager._VehicleStats.FloatForce * Time.deltaTime;
     }
 
     private void ApplyGravity()
