@@ -1,5 +1,135 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8098853786682588682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerActions/InteractWithModule
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerActions/InteractWithModule
+  Guid:
+    Data1: -1720724770
+    Data2: 1286403731
+    Data3: -138196818
+    Data4: -1593324489
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-7358543748885400506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Impacts/ObstacleHit
+  m_EditorClassIdentifier: 
+  Path: event:/Impacts/ObstacleHit
+  Guid:
+    Data1: 705589438
+    Data2: 1113971668
+    Data3: -490993508
+    Data4: 1114176938
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-6079458071786602276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Motor/VehicleSpeed
+  m_EditorClassIdentifier: 
+  Name: VehicleSpeed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3837146223
+    data2: 601370687
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5458642092648266949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Vehicle/Motor
+  m_EditorClassIdentifier: 
+  Path: event:/Vehicle/Motor
+  Guid:
+    Data1: 1079753004
+    Data2: 1173542414
+    Data3: -2118200446
+    Data4: -671223843
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6079458071786602276}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12120
+--- !u!114 &-4213790987892809595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/VehicleSpeed
+  m_EditorClassIdentifier: 
+  Name: VehicleSpeed
+  StudioPath: parameter:/VehicleSpeed
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3837146223
+    data2: 601370687
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-3592886030099116022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +145,10 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637871139871484045
+  lastModified: 637910743489531954
   FileSizes:
   - Name: Desktop
-    Value: 515456
+    Value: 602432
   Exists: 1
 --- !u!114 &-2363331211308944571
 MonoBehaviour:
@@ -35,38 +165,11 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637871139871513380
+  lastModified: 637910743489551959
   FileSizes:
   - Name: Desktop
-    Value: 774
+    Value: 1184
   Exists: 1
---- !u!114 &-1023395448277426925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiances/Mecha_Interior
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiances/Mecha_Interior
-  Guid:
-    Data1: -863614029
-    Data2: 1111392470
-    Data3: -162936693
-    Data4: -368554400
-  Banks:
-  - {fileID: -3592886030099116022}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 46977
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,11 +186,154 @@ MonoBehaviour:
   - {fileID: -2363331211308944571}
   - {fileID: -3592886030099116022}
   EditorEvents:
-  - {fileID: -1023395448277426925}
-  EditorParameters: []
+  - {fileID: -5458642092648266949}
+  - {fileID: 6410053402123609550}
+  - {fileID: 3888159019630900203}
+  - {fileID: 8475831472327846333}
+  - {fileID: 7807691452486540827}
+  - {fileID: -7358543748885400506}
+  - {fileID: -8098853786682588682}
+  - {fileID: 491152300275665712}
+  EditorParameters:
+  - {fileID: -4213790987892809595}
   MasterBanks:
   - {fileID: -3592886030099116022}
   StringsBanks:
   - {fileID: -2363331211308944571}
-  cacheTime: 637871139871513380
+  cacheTime: 637910743489551959
   cacheVersion: 10
+--- !u!114 &491152300275665712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerActions/DropModule
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerActions/DropModule
+  Guid:
+    Data1: -998345994
+    Data2: 1332682944
+    Data3: 135420575
+    Data4: 95284623
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3888159019630900203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Impacts/WallHit
+  m_EditorClassIdentifier: 
+  Path: event:/Impacts/WallHit
+  Guid:
+    Data1: -1410193768
+    Data2: 1083560984
+    Data3: -2127981388
+    Data4: 1141381275
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &6410053402123609550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Impacts/GroundHit
+  m_EditorClassIdentifier: 
+  Path: event:/Impacts/GroundHit
+  Guid:
+    Data1: 521100432
+    Data2: 1180897800
+    Data3: 616890284
+    Data4: 22645119
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7807691452486540827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiances/2D/Mecha_Interior
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiances/2D/Mecha_Interior
+  Guid:
+    Data1: -863614029
+    Data2: 1111392470
+    Data3: -162936693
+    Data4: -368554400
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 46977
+--- !u!114 &8475831472327846333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/PlayerActions/GrabModule
+  m_EditorClassIdentifier: 
+  Path: event:/PlayerActions/GrabModule
+  Guid:
+    Data1: -1158610773
+    Data2: 1086436371
+    Data3: 223196816
+    Data4: 1760556157
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
