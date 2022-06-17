@@ -108,6 +108,7 @@ public class VehicleCollisionManager : MonoBehaviour
 
     public void CollidedWithGround(HitBoxSide side)
     {
+        Debug.Log("Hit Ground");
         switch (side)
         {
             case HitBoxSide.Up:
