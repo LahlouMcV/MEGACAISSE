@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainLevel/MainLevel.unity
     guid: 8dc146eef5e3ce149b0b32cbca12e83f
   - enabled: 1
-    path: Assets/Scenes/MainLevel/MainLevel_SmallCockpit.unity
+    path: Assets/Scenes/MainLevel/Main Level_Small Cockpit.unity
     guid: 3e96e8a75c476ea4fabc80d4cc8a7939
   - enabled: 1
     path: Assets/Scenes/MainLevel/MainLevel_BetterCourse.unity
