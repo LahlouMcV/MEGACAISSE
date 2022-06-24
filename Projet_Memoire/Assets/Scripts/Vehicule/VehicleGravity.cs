@@ -10,7 +10,7 @@ public class VehicleGravity : MonoBehaviour
 
     private RaycastHit GroundHit;
 
-    void Update()
+    void FixedUpdate()
     {
         
         Ray ray = new Ray(_Bumper.position, -this.transform.up);
