@@ -15,7 +15,7 @@ public class VehicleMovement : MonoBehaviour
 
 
     //Update position based on the current speed of the vehicle
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         this.transform.position += (DirectionVector.normalized * currentSpeed * Time.deltaTime);
         if(currentSpeed == 0)
