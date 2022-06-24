@@ -22,6 +22,8 @@ public class VehicleMovement : MonoBehaviour
         {
             DirectionVector = Vector3.zero;
         }
+        float x = currentSpeed / vehicleManager._VehicleStats.MaxSpeed;
+        vehicleManager._VehicleSoundFeedback.SetMotorParam(x);
     }
 
     //Function that accelerates the vehicle
@@ -56,7 +58,6 @@ public class VehicleMovement : MonoBehaviour
         }
         else if (input != 0 && (accelerate == false || accelerate == true))
         {
-            Debug.Log("OVERHERE!!!");
             DirectionVector = input * this.transform.forward;
             currentSpeed -= vehicleManager._VehicleStats.Breaks * Time.deltaTime * input;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);

@@ -9,6 +9,7 @@ public class VehicleSoundFeedback : MonoBehaviour
     [SerializeField] FMODUnity.StudioEventEmitter RightWallHit;
     [SerializeField] FMODUnity.StudioEventEmitter FrontWallHit;
     [SerializeField] FMODUnity.StudioEventEmitter BackWallHit;
+    [SerializeField] FMODUnity.StudioEventEmitter GroundHit;
 
     public void SetMotorParam(float amount)
     {
@@ -20,13 +21,22 @@ public class VehicleSoundFeedback : MonoBehaviour
         switch (side)
         {
             case VehicleCollisionManager.HitBoxSide.Left:
+                LeftWallHit.Play();
                 break;
             case VehicleCollisionManager.HitBoxSide.Right:
+                RightWallHit.Play();
                 break;
             case VehicleCollisionManager.HitBoxSide.Forward:
+                FrontWallHit.Play();
                 break;
             case VehicleCollisionManager.HitBoxSide.Back:
+                BackWallHit.Play();
                 break;
         }
+    }
+
+    public void HitGround()
+    {
+        GroundHit.Play();
     }
 }

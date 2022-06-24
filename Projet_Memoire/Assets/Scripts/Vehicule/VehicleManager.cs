@@ -8,6 +8,7 @@ public class VehicleManager : MonoBehaviour
     public VehicleStats _VehicleStats;
     public VehicleMovement _VehicleMovement;
     public VehicleGravity _VehicleGravity;
+    public VehicleSoundFeedback _VehicleSoundFeedback;
 
     [Header("HealthStats")]
     public float MainHealthPoints = 100f;
