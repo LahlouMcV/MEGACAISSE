@@ -15,17 +15,17 @@ public class Slider : ControlModule
     //private Vector3 startMousePos;
     private Vector3 startPos;
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(MovingSlider)
         {
             Ray _rayForSlot = Camera.main.ScreenPointToRay(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
-            Physics.Raycast(_rayForSlot, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
+            Physics.Raycast(_rayForSlot, out hit, Mathf.Infinity);
             if(hit .collider != null)
             {
                 EndPos.transform.position = hit.point;
                 Vector3 moveVector = EndPos.transform.position - StartPos.transform.position;
-                this.transform.localPosition = startPos + moveVector;
+                this.transform.position = EndPos.transform.position;
                 float x = this.transform.localPosition.x;
                 float y = this.transform.localPosition.y;
                 float z = this.transform.localPosition.z;
@@ -33,10 +33,8 @@ public class Slider : ControlModule
                       Mathf.Clamp(y, StartPosition.y, EndPosition.y),
                       Mathf.Clamp(z, StartPosition.z, EndPosition.z));
                 float inputValue = (z - StartPosition.z) / (EndPosition.z - StartPosition.z);
-                this.ChangeInputValue(inputValue);
+                this.ChangeInputValue(Mathf.Clamp(inputValue, 0,1));
 
-                Debug.Log(StartPos.transform.position);
-                Debug.Log(EndPos.transform.position);
 
                 if (currentInputValue == 0) InputFeedback.material = RedLight;
                 else if (currentInputValue >= 1) InputFeedback.material = GreenLight;
