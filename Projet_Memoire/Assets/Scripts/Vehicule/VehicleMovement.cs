@@ -6,6 +6,7 @@ public class VehicleMovement : MonoBehaviour
 {
     [SerializeField] private VehicleManager vehicleManager;
     public float currentSpeed;
+    public float currentMaxSpeed;
 
     private bool breaking;
     private bool accelerate;
@@ -37,8 +38,9 @@ public class VehicleMovement : MonoBehaviour
         else if (input != 0 && breaking == false)
         {
             DirectionVector = input * this.transform.forward;
+            ChangeMaxSpeed(input);
             currentSpeed += vehicleManager._VehicleStats.Acceleration * Time.deltaTime * input;
-            currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
+            currentSpeed = Mathf.Clamp(currentSpeed, -currentMaxSpeed, currentMaxSpeed);
             accelerate = true;
         }
 
@@ -59,6 +61,7 @@ public class VehicleMovement : MonoBehaviour
         else if (input != 0 && (accelerate == false || accelerate == true))
         {
             DirectionVector = input * this.transform.forward;
+            ChangeMaxSpeed(input);
             currentSpeed -= vehicleManager._VehicleStats.Breaks * Time.deltaTime * input;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
             breaking = true;
@@ -73,7 +76,8 @@ public class VehicleMovement : MonoBehaviour
     {
         if(input != 0)
         {
-            DirectionVector += input * this.transform.right;
+            DirectionVector += Mathf.Abs(input) * this.transform.right;
+            ChangeMaxSpeed(input);
             currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.deltaTime;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
         }
@@ -84,5 +88,10 @@ public class VehicleMovement : MonoBehaviour
     {
         float angleRotation = input * vehicleManager._VehicleStats.TurnSpeed * Time.deltaTime;
         this.transform.rotation *= Quaternion.AngleAxis(angleRotation, Vector3.up);
+    }
+
+    public void ChangeMaxSpeed(float input)
+    {
+        currentMaxSpeed = vehicleManager._VehicleStats.MaxSpeed * input;
     }
 }
