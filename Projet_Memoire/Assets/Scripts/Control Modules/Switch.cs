@@ -24,7 +24,7 @@ public class Switch : ControlModule
         }
         else
         {
-            ChangeInputValue(1f);
+            ChangeInputValue(1f * InputMultiplier);
             on = true;
             InputFeedback.material = GreenLight;
             this.transform.localRotation = Quaternion.Euler(10, 0, 0);

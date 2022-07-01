@@ -63,7 +63,7 @@ public class VehicleMovement : MonoBehaviour
             DirectionVector = input * this.transform.forward;
             ChangeMaxSpeed(input);
             currentSpeed -= vehicleManager._VehicleStats.Breaks * Time.deltaTime * input;
-            currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
+            currentSpeed = Mathf.Clamp(currentSpeed, -currentMaxSpeed, currentMaxSpeed);
             breaking = true;
         }
         if (input == 0)
@@ -79,7 +79,7 @@ public class VehicleMovement : MonoBehaviour
             DirectionVector += Mathf.Abs(input) * this.transform.right;
             ChangeMaxSpeed(input);
             currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.deltaTime;
-            currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
+            currentSpeed = Mathf.Clamp(currentSpeed, -currentMaxSpeed, currentMaxSpeed);
         }
     }
 
