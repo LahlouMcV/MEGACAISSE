@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d035784799aff04da98c79475d24f0c, type: 3}
+  m_Name: VehicleStats_Test5
+  m_EditorClassIdentifier: 
+  MaxSpeed: 100
+  Breaks: 50
+  TurnSpeed: 50
+  StraffingDistance: 50
+  Acceleration: 100
+  Drag: 8
+  Gravity: 9.8
+  FreefallGravity: 10
+  TerminalVelocity: 0
+  FloatForce: 0
+  FloatHeight: 0
+  DamageWhenWallCollision: 2
+  FallDamage: 0
