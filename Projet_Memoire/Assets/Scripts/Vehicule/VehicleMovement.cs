@@ -73,7 +73,7 @@ public class VehicleMovement : MonoBehaviour
     {
         if(input != 0)
         {
-            DirectionVector += input * this.transform.right;
+            DirectionVector += Mathf.Abs(input) * this.transform.right;
             currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.deltaTime;
             currentSpeed = Mathf.Clamp(currentSpeed, -vehicleManager._VehicleStats.MaxSpeed, vehicleManager._VehicleStats.MaxSpeed);
         }
