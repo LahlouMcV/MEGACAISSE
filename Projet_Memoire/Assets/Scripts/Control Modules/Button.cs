@@ -7,7 +7,7 @@ public class Button : ControlModule
     public override void ActivateFunction()
     {
         base.ActivateFunction();
-        ChangeInputValue(1f);
+        ChangeInputValue(1f * InputMultiplier);
         InputFeedback.material = GreenLight;
         this.transform.localPosition = new Vector3(0.0f, 0.1f, 0.0f);
     }

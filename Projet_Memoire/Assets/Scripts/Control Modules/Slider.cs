@@ -32,8 +32,8 @@ public class Slider : ControlModule
                 this.transform.localPosition = new Vector3(Mathf.Clamp(x, StartPosition.x, EndPosition.x), 
                       Mathf.Clamp(y, StartPosition.y, EndPosition.y),
                       Mathf.Clamp(z, StartPosition.z, EndPosition.z));
-                float inputValue = (z - StartPosition.z) / (EndPosition.z - StartPosition.z);
-                this.ChangeInputValue(Mathf.Clamp(inputValue, 0,1));
+                float inputValue = ((z - StartPosition.z) / (EndPosition.z - StartPosition.z)) * InputMultiplier;
+                this.ChangeInputValue(Mathf.Clamp(inputValue, 0,InputMultiplier));
 
 
                 if (currentInputValue == 0) InputFeedback.material = RedLight;
