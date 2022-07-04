@@ -9,10 +9,12 @@ public class FX_SandParticuleOnVehicule : MonoBehaviour
     [SerializeField] private GameObject _SandEffect; //Contient le FX de sable
     private Transform _CurrentSandEffectTransform; //Contient le transform du sandEffect
     private ParticleSystem _CurrentSandEffectParticule; //Contient le particule system du sandEffect
-    private float _CurrentParticuleStartLifeTime; //contient la durée de vie des particules à appliquer
+    private float _CurrentParticuleSpeed; //contient la vitesse actuelle des particules à appliquer
 
-    [SerializeField] private Vector2 _SandDistanceFromVehicule = new Vector2(40,5); //Contient la distance de l'effet de sable par rapport au véhicule
-    [SerializeField] private float _MaxParticuleStartLifeTime = 5f; //Contient la durée de vie max des particules
+    [SerializeField] private Vector2 _SandDistanceFromVehicule = new Vector2(30,5); //Contient la distance de l'effet de sable par rapport au véhicule
+
+    [SerializeField] private float _MinParticuleSpeed = 1f; //Contient la vitesse min des particules
+    [SerializeField] private float _MaxParticuleSpeed = 8f; //Contient la vitesse max des particules
 
     private Transform _SelfTransform; //Référence vers le transform de l'objet
 
@@ -26,15 +28,16 @@ public class FX_SandParticuleOnVehicule : MonoBehaviour
     }
     void LateUpdate()
     {
-        _CurrentParticuleStartLifeTime = Mathf.Lerp(0, _MaxParticuleStartLifeTime, SpeedRation());
-        _CurrentSandEffectParticule.startLifetime = _CurrentParticuleStartLifeTime;
+        _CurrentParticuleSpeed = Mathf.Lerp(_MinParticuleSpeed, _MaxParticuleSpeed, SpeedRation());
+        var main = _CurrentSandEffectParticule.main;
+        main.simulationSpeed = _CurrentParticuleSpeed;
+        
         SetSandEffectPosition();
     }
 
     //Fonction permettant de spawn l'effet de particule de sable et de l'enregistrer
     private void SpawnAndRegisterSandEffect()
     {
-        Debug.Log("ISSOU");
         _CurrentSandEffectTransform = Instantiate(_SandEffect, _SelfTransform.position, Quaternion.identity).transform;
         _CurrentSandEffectParticule = _CurrentSandEffectTransform.GetComponent<ParticleSystem>();
     }
