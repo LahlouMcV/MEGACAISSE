@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class ControlModule : MonoBehaviour
 {
+    [Header("Module Stats")]
+    public float InputMultiplier = 1;
+
+    [Header("GeneralStats")]
     public Transform MainTransform;
     public Rigidbody Rigidbody;
     public float currentInputValue = 0f;
     public bool OnSlot = false;
     public Slot linkedSlot = null;
+
+    [Header("Feedback Stats")]
+    public MeshRenderer InputFeedback;
+    public Material GreenLight;
+    public Material RedLight;
+
 
     public virtual float InputValue()
     {

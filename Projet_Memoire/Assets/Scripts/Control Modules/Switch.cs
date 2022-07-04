@@ -5,6 +5,13 @@ using UnityEngine;
 public class Switch : ControlModule
 {
     public bool on = false;
+
+    private void Start()
+    {
+        InputFeedback.material = RedLight;
+        this.transform.localRotation = Quaternion.Euler(-10, 0, 0);
+    }
+
     public override void ActivateFunction()
     {
         base.ActivateFunction();
@@ -12,11 +19,15 @@ public class Switch : ControlModule
         {
             ChangeInputValue(0f);
             on = false;
+            InputFeedback.material = RedLight;
+            this.transform.localRotation = Quaternion.Euler(-10, 0, 0);
         }
         else
         {
-            ChangeInputValue(1f);
+            ChangeInputValue(1f * InputMultiplier);
             on = true;
+            InputFeedback.material = GreenLight;
+            this.transform.localRotation = Quaternion.Euler(10, 0, 0);
         }
     }
 }

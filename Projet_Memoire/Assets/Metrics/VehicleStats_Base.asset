@@ -19,5 +19,9 @@ MonoBehaviour:
   Acceleration: 20
   Drag: 8
   Gravity: 9.8
+  FreefallGravity: 10
+  TerminalVelocity: 40
+  FloatForce: 15
+  FloatHeight: 10
   DamageWhenWallCollision: 2
   FallDamage: 5

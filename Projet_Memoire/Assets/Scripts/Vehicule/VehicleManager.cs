@@ -8,6 +8,8 @@ public class VehicleManager : MonoBehaviour
     public VehicleStats _VehicleStats;
     public VehicleMovement _VehicleMovement;
     public VehicleGravity _VehicleGravity;
+    public VehicleSoundFeedback _VehicleSoundFeedback;
+    public VehicleCollisionManager _VehicleCollisionManager;
 
     [Header("HealthStats")]
     public float MainHealthPoints = 100f;
@@ -20,6 +22,7 @@ public class VehicleManager : MonoBehaviour
     #region Health Management
     public void HurtVehicle(float amount)
     {
+        _VehicleCollisionManager.CollideWithCenter();
         MainHealthPoints -= amount;
     }
 
@@ -95,6 +98,7 @@ public class VehicleManager : MonoBehaviour
 
     public void Defeat()
     {
-
+        SceneManager._SceneManager.LoadScene(0);
     }
+
 }
