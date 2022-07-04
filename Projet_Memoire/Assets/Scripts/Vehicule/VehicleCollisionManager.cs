@@ -17,8 +17,8 @@ public class VehicleCollisionManager : MonoBehaviour
 
     public void CollidedWithWall(HitBoxSide side, Transform wall)
     {
-        Vector3 aimPosition = Vector3.zero;
-        Quaternion aimRotation = Quaternion.identity;
+        Vector3 aimPosition = this.transform.position;
+        Quaternion aimRotation = this.transform.rotation;
         _VehicleManager.HurtSide(_VehicleManager._VehicleStats.DamageWhenWallCollision, side);
         _VehicleManager._VehicleSoundFeedback.HitWall(side);
         switch (side)
