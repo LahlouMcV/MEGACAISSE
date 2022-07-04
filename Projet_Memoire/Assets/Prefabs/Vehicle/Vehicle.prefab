@@ -1120,11 +1120,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _VehicleManager: {fileID: 6294909625220221582}
-  CockpitHealth: {fileID: 0}
-  FrontSideHealth: {fileID: 0}
-  RightSideHealth: {fileID: 0}
-  LeftSideHealth: {fileID: 0}
-  BackSideHealth: {fileID: 0}
+  CockpitHealth: {fileID: 1525707992122093059}
+  FrontSideHealth: {fileID: 8218546037600290276}
+  RightSideHealth: {fileID: 6687001922670522523}
+  LeftSideHealth: {fileID: 1034676035651281063}
+  BackSideHealth: {fileID: 2023995556828217078}
+  CockpitPicto: {fileID: 442929682094192588}
+  FrontSidePicto: {fileID: 8677973177947571101}
+  RightSidePicto: {fileID: 3312637853047213572}
+  LeftSidePicto: {fileID: 3138933414116183604}
+  BackSidePicto: {fileID: 7582256002998825467}
 --- !u!1 &974178678051472516
 GameObject:
   m_ObjectHideFlags: 0
@@ -2970,6 +2975,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6294909625220221577}
   - component: {fileID: 6294909625220221582}
+  - component: {fileID: 1530183054219372701}
+  - component: {fileID: 3455173568848020679}
+  - component: {fileID: 3706832668535119966}
   - component: {fileID: 6294909625220221583}
   - component: {fileID: 6294909625220221581}
   - component: {fileID: 5868807147356398920}
@@ -3032,11 +3040,52 @@ MonoBehaviour:
   _VehicleMovement: {fileID: 6294909625220221583}
   _VehicleGravity: {fileID: 6294909625220221581}
   _VehicleSoundFeedback: {fileID: 1520058366}
+  _VehicleCollisionManager: {fileID: 0}
   MainHealthPoints: 100
   RightSideHealth: 25
   LeftSideHealth: 25
   FrontSideHealth: 25
   BackSideHealth: 25
+--- !u!114 &1530183054219372701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294909625220221576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6cea630cbb460249a95de7de1489941, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _WeaponAim: {fileID: 0}
+  _WeaponShoot: {fileID: 0}
+--- !u!114 &3455173568848020679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294909625220221576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f55dc3f0208d84998fb996bed2e10b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _VehicleManager: {fileID: 6294909625220221582}
+  _WeaponCamera: {fileID: 0}
+--- !u!114 &3706832668535119966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294909625220221576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f79c77d09ca984e9bfe5d043690d8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6294909625220221583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3051,6 +3100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vehicleManager: {fileID: 6294909625220221582}
   currentSpeed: 0
+  currentMaxSpeed: 0
   DirectionVector: {x: 0, y: 0, z: 0}
 --- !u!114 &6294909625220221581
 MonoBehaviour:
@@ -3080,6 +3130,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _VehicleManager: {fileID: 6294909625220221582}
+  OnCollidedWithCenter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollidedWithLeft:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollidedWithRight:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollidedWithFront:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCollidedWithBack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!54 &1958101932
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4362,6 +4427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65295a5d52d3c424fa89c93b686b3cd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MouseSensitivity: 1
   _PlayerManager: {fileID: 6542007898691007418}
   CameraPos: {fileID: 0}
 --- !u!4 &6294909625648303894 stripped
