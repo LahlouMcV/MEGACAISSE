@@ -5993,7 +5993,7 @@ PrefabInstance:
     - target: {fileID: 6294909625220221582, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
       propertyPath: _VehicleStats
       value: 
-      objectReference: {fileID: 11400000, guid: 6f50cff16412cbe40be1a46f9f5684b8, type: 2}
+      objectReference: {fileID: 11400000, guid: e7e0a02c63b012943bf1980c41ff762b, type: 2}
     - target: {fileID: 6294909625936287557, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
       propertyPath: m_IsActive
       value: 1

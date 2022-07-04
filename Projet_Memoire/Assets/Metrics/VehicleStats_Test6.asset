@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxSpeed: 100
   Breaks: 30
-  TurnSpeed: 50
+  TurnSpeed: 30
   StraffingDistance: 100
   Acceleration: 100
   Drag: 8
