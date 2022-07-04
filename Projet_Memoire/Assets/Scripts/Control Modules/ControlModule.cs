@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ControlModule : MonoBehaviour
 {
+    [Header("Module Stats")]
+    public float InputMultiplier = 1;
+
     [Header("GeneralStats")]
     public Transform MainTransform;
     public Rigidbody Rigidbody;

@@ -21,6 +21,9 @@ public class PlayerGrabAndDrop : MonoBehaviour
     private Vector3 CursorPosition;
     private Slot HighlightedSlot;
     public ControlModule module;
+    [Header("Reference")]
+    [SerializeField] private Transform ModuleHolder;
+    [SerializeField] private Transform Vehicle;
 
     private bool LeftClickHeld = false;
 
@@ -82,18 +85,9 @@ public class PlayerGrabAndDrop : MonoBehaviour
             //If object is being held
             if (ObjectGrabbed)
             {
-                //Launch raycast checking the ground to drop it and adjust position accordinginly
-                RaycastHit _GroundHit;
-                Physics.Raycast(_ray, out _GroundHit, Mathf.Infinity, LayerMask.GetMask("Default"));
-
-                //Change position 
-                if (_GroundHit.collider != null && Vector3.Distance(this.transform.position, _GroundHit.point) < Vector3.Distance(this.transform.position, CursorPosition))
-                {
-                    CursorPosition = (_GroundHit.point - this.transform.position) + 
-                        ((_GroundHit.point - this.transform.position).normalized * -0.25f);
-                    CursorPosition += this.transform.position;
-                }
-                Interactable.MainTransform.position = Vector3.Lerp(Interactable.MainTransform.position, CursorPosition, 0.1f);
+                Interactable.MainTransform.parent = ModuleHolder;
+                Interactable.MainTransform.localPosition = Vector3.zero;
+                Interactable.MainTransform.localRotation = Quaternion.identity;
             }
         }
         else
@@ -129,12 +123,14 @@ public class PlayerGrabAndDrop : MonoBehaviour
             else if (ObjectGrabbed == true && HighlightedSlot == null)
             {
                 ObjectGrabbed = false;
+                Interactable.MainTransform.parent = Vehicle;
                 Interactable.Rigidbody.isKinematic = false;
                 Interactable = null;
             }
             else if (ObjectGrabbed == true && HighlightedSlot != null)
             {
                 ObjectGrabbed = false;
+                Interactable.MainTransform.parent = Vehicle;
                 HighlightedSlot.PlugModule(Interactable);
                 Interactable = null;
             }
