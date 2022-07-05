@@ -15,6 +15,11 @@ public class VehicleStats : ScriptableObject
     public float StraffingDistance;
     public float Acceleration;
 
+    [Header("Weapon")]
+    public float AimSensitivity;
+    public float RateOfFire;
+    public float WeaponRange;
+
     [Header("Physics")]
     public float Drag;
     public float Gravity;
