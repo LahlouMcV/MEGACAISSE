@@ -20,6 +20,6 @@ public class ControlBoardWeapon : MonoBehaviour
         _WeaponManager._WeaponAim.AimLeftRight(-_WeaponSlotGroupe.LeftAim.currentInputValue);
 
         //Shoot Functions
-        
+        _WeaponManager._WeaponShoot.ShootWeapon(_WeaponSlotGroupe.Shoot.currentInputValue);
     }
 }

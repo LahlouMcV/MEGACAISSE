@@ -19,6 +19,7 @@ MonoBehaviour:
   Acceleration: 20
   AimSensitivity: 0.2
   RateOfFire: 1
+  WeaponRange: 1000
   Drag: 8
   Gravity: 9.8
   FreefallGravity: 10
