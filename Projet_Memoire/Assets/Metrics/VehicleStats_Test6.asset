@@ -18,8 +18,8 @@ MonoBehaviour:
   StraffingDistance: 100
   Acceleration: 100
   Drag: 8
-  Gravity: 9.8
-  FreefallGravity: 10
+  Gravity: 50
+  FreefallGravity: 1000
   TerminalVelocity: 0
   FloatForce: 0
   FloatHeight: 0
