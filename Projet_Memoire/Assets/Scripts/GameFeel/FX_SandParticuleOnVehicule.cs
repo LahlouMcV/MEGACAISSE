@@ -10,11 +10,13 @@ public class FX_SandParticuleOnVehicule : MonoBehaviour
     private Transform _CurrentSandEffectTransform; //Contient le transform du sandEffect
     private ParticleSystem _CurrentSandEffectParticule; //Contient le particule system du sandEffect
     private float _CurrentParticuleSpeed; //contient la vitesse actuelle des particules à appliquer
+    private float _CurrentParticuleTrailLenght; //contient la vitesse actuelle des particules à appliquer
 
     [SerializeField] private Vector2 _SandDistanceFromVehicule = new Vector2(30,5); //Contient la distance de l'effet de sable par rapport au véhicule
 
     [SerializeField] private float _MinParticuleSpeed = 1f; //Contient la vitesse min des particules
     [SerializeField] private float _MaxParticuleSpeed = 8f; //Contient la vitesse max des particules
+    [SerializeField] private float _MaxParticuleTrailLenght = 0.1f; //Contient la vitesse max des particules
 
     private Transform _SelfTransform; //Référence vers le transform de l'objet
 
@@ -29,9 +31,15 @@ public class FX_SandParticuleOnVehicule : MonoBehaviour
     void LateUpdate()
     {
         _CurrentParticuleSpeed = Mathf.Lerp(_MinParticuleSpeed, _MaxParticuleSpeed, SpeedRation());
+        _CurrentParticuleTrailLenght = Mathf.Lerp(0, _MaxParticuleTrailLenght, SpeedRation());
+
         var main = _CurrentSandEffectParticule.main;
+        var trail = _CurrentSandEffectParticule.trails;
+
         main.simulationSpeed = _CurrentParticuleSpeed;
-        
+        trail.widthOverTrail = _CurrentParticuleTrailLenght;
+
+
         SetSandEffectPosition();
     }
 
