@@ -24198,6 +24198,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7631558159226157724, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: Vehicle
+      value: 
+      objectReference: {fileID: 907618627}
+    - target: {fileID: 7631558159226157724, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: ModuleHolder
+      value: 
+      objectReference: {fileID: 1663078182}
     - target: {fileID: 7717997058284605519, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.384
@@ -54452,6 +54460,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1197955382, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: CameraPos
+      value: 
+      objectReference: {fileID: 1897779265}
+    - target: {fileID: 1197955382, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+      propertyPath: _PlayerManager
+      value: 
+      objectReference: {fileID: 1517486282}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -54523,6 +54539,11 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9018249871969862650, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+--- !u!4 &1663078182 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1561907289, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
+  m_PrefabInstance: {fileID: 1663078181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1664631508
 PrefabInstance:
   m_ObjectHideFlags: 0
