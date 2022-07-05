@@ -22,11 +22,15 @@ public class Vehicule_Vrombissement : MonoBehaviour
             float x = Random.Range(-1f, 1f) * _Magnitude;
             float y = Random.Range(-1f, 1f) * _Magnitude;
 
-            _SelfTransform.position = new Vector3(originalPos.x + x, originalPos.y + y, originalPos.z);
+            _SelfTransform.position = new Vector3(originalPos.x + x, originalPos.y, originalPos.z+y);
         }
     }
 
-    IEnumerator Shake(float duration, float magnitude) 
+    public void Shake(float magnitude) 
+    {
+        StartCoroutine(Shake(0.4f, magnitude));
+    }
+    public IEnumerator Shake(float duration, float magnitude) 
     {
         Debug.Log("SHAKE");
         Vector3 initPosition = _SelfTransform.position;
