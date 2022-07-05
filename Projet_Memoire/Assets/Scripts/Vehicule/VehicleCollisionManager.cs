@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VehicleCollisionManager : MonoBehaviour
 {
     public enum HitBoxSide { Up, Down, Left, Right, Forward, Back};
     [SerializeField] private VehicleManager _VehicleManager;
+    [Header("Events")]
+    public UnityEvent OnCollidedWithCenter;
+    public UnityEvent OnCollidedWithLeft;
+    public UnityEvent OnCollidedWithRight;
+    public UnityEvent OnCollidedWithFront;
+    public UnityEvent OnCollidedWithBack;
+
 
     public void CollidedWithWall(HitBoxSide side, Transform wall)
     {
-        Vector3 aimPosition = Vector3.zero;
-        Quaternion aimRotation = Quaternion.identity;
+        Vector3 aimPosition = this.transform.position;
+        Quaternion aimRotation = this.transform.rotation;
         _VehicleManager.HurtSide(_VehicleManager._VehicleStats.DamageWhenWallCollision, side);
         _VehicleManager._VehicleSoundFeedback.HitWall(side);
         switch (side)
@@ -22,15 +30,18 @@ public class VehicleCollisionManager : MonoBehaviour
             case HitBoxSide.Left:
                 aimPosition = this.transform.position + this.transform.right * 2;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(30, this.transform.up);
+                OnCollidedWithLeft.Invoke();
                 break;
             case HitBoxSide.Right:
                 aimPosition = this.transform.position - this.transform.right * 2;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(-30, this.transform.up);
+                OnCollidedWithRight.Invoke();
                 break;
             case HitBoxSide.Forward:
                 RaycastHit hit;
                 Ray ray = new Ray(this.transform.position, this.transform.forward);
-                if(Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
+                OnCollidedWithFront.Invoke();
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
                 {
                     Debug.Log(hit.normal);
                     if(hit.collider !=null && Vector3.Angle(this.transform.forward,  -hit.normal) <= 30)
@@ -61,6 +72,7 @@ public class VehicleCollisionManager : MonoBehaviour
                 }
                 break;
             case HitBoxSide.Back:
+                OnCollidedWithBack.Invoke();
                 RaycastHit BackHit = new RaycastHit();
                 Ray BackRay = new Ray(this.transform.position, -this.transform.forward);
                 if (Physics.Raycast(BackRay, out BackHit, Mathf.Infinity, LayerMask.GetMask("Ground")))
@@ -145,5 +157,10 @@ public class VehicleCollisionManager : MonoBehaviour
             if (this.transform.position == position && this.transform.rotation == rotation) StopAllCoroutines();
             yield return null;
         }
+    }
+
+    public void CollideWithCenter()
+    {
+        OnCollidedWithCenter.Invoke();
     }
 }
