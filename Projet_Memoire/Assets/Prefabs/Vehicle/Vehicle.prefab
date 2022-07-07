@@ -865,8 +865,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.625515, y: 2.568774, z: 21.952896}
-  m_Center: {x: -0.12742996, y: 0.100327075, z: 0.008494377}
+  m_Size: {x: 8.625515, y: 2.568774, z: 16.913456}
+  m_Center: {x: -0.12742996, y: 0.100327015, z: 2.528213}
 --- !u!54 &476966115
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2273,8 +2273,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 8.625515, y: 1.9784329, z: 21.436666}
-  m_Center: {x: -0.12742996, y: -0.48921645, z: 0.008494377}
+  m_Size: {x: 8.625515, y: 1.9784329, z: 16.620872}
+  m_Center: {x: -0.12742996, y: -0.48921645, z: 2.4163918}
 --- !u!54 &6294909625666573722
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3112,6 +3112,7 @@ GameObject:
   - component: {fileID: 6294909625220221583}
   - component: {fileID: 6294909625220221581}
   - component: {fileID: 5868807147356398920}
+  - component: {fileID: 5160993962134020950}
   - component: {fileID: 1958101932}
   m_Layer: 0
   m_Name: Vehicle
@@ -3281,6 +3282,21 @@ MonoBehaviour:
   OnCollidedWithBack:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5160993962134020950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294909625220221576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f61953f19c161de468350c0abde75734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ParChocPrefab: {fileID: 4974639941290887715, guid: 06beda389dbe1054a99951e05eb36954, type: 3}
+  _ParChocPosition: {x: 0, y: 0, z: 0}
+  _ConnecticPosition: {x: 0, y: 0, z: 0}
 --- !u!54 &1958101932
 Rigidbody:
   m_ObjectHideFlags: 0
