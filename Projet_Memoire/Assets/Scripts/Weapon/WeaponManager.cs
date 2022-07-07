@@ -7,4 +7,7 @@ public class WeaponManager : MonoBehaviour
     [Header("Refs")]
     public WeaponAim _WeaponAim;
     public WeaponShoot _WeaponShoot;
+
+
+    
 }

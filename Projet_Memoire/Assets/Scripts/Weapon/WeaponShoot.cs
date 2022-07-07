@@ -13,7 +13,7 @@ public class WeaponShoot : MonoBehaviour
     public void ShootWeapon(float input)
     {
         Ray ray = WeaponCamera.ScreenPointToRay(new Vector3(WeaponCamera.pixelWidth / 2, WeaponCamera.pixelHeight / 2));
-        if (Physics.Raycast(ray, out hit, _VehicleManager._VehicleStats.WeaponRange, LayerMask.GetMask("Ground")) && Shot && input != 0)
+        if (Physics.SphereCast(ray, 2.5f, out hit, _VehicleManager._VehicleStats.WeaponRange, LayerMask.GetMask("Ground", "Obstacle")) && Shot && input != 0)
         {
             Shot = false;
 
