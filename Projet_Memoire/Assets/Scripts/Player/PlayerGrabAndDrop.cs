@@ -92,7 +92,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
         else
         {
-            Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+            _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.blue);
             
             Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
@@ -145,7 +145,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
         {
             if(module != null)
             {
-                Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
+                _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
                 Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.magenta, 1000000);
                 //Debug.Break();
                 Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
@@ -186,6 +186,13 @@ public class PlayerGrabAndDrop : MonoBehaviour
         GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
         GUILayout.Label("Target cursor world pos : " + CursorPosition);
     }*/
+
+    Ray _ray;
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(_ray.origin, 0.5f);
+    }
 
 
 }
