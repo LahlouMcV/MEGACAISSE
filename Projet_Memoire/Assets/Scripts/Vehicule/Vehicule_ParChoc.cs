@@ -6,38 +6,42 @@ public class Vehicule_ParChoc : MonoBehaviour
 {
     //Ce script a pour objectif de générer un par choc physique pour le véhicule
 
-    [SerializeField] private GameObject _ParChocPrefab; //Prefab que l'on va instancier
+    [SerializeField] private GameObject _SpringPrefab; //Prefab que l'on va instancier
 
-    [SerializeField] private Vector3 _ParChocPosition;
-    [SerializeField] private Vector3 _ConnecticPosition;
+    [SerializeField] private Vector3 _ReactorPosition = new Vector3(0,5.3f,0); //Position initial du reacteur
+    [SerializeField] private Vector3 _SpringLocalPosition = new Vector3(-3.55f,6.472774f,43.7776f); // Position initial du point central de l'elastique
+    private Transform _ReactorTransform = null; //Contient le transform du reacteur
 
-    Transform _CurrentConnecticTransform;
-
-    Transform _SelfTransform;
+    [SerializeField] Transform _SelfTransform; //Contient le transform du vehicule
 
     void Start()
     {
         _SelfTransform = transform;
         SpawnParChoc();
     }
-    private void LateUpdate()
+    void LateUpdate()
     {
-        PositionConnectic();
+        //ReactorOrientation();
     }
 
     //Fonction permettant de faire spawn le par choc
     private void SpawnParChoc() 
     {
-        Vector3 _VehiculePosition = transform.position;
-        Transform parChocPrefabTransform = Instantiate(_ParChocPrefab, _VehiculePosition + _ParChocPosition, Quaternion.identity).transform;
+        Transform currentSpringPrefab = Instantiate(_SpringPrefab, _ReactorPosition, Quaternion.identity).transform;
 
-        _CurrentConnecticTransform = parChocPrefabTransform.GetChild(2);
-        //_CurrentConnecticTransform.SetParent(transform);
-        //_CurrentConnecticTransform.position = _VehiculePosition + _ConnecticPosition;
+        Transform springTransform = currentSpringPrefab.GetChild(1);
+        springTransform.parent = transform;
+        springTransform.localPosition = _SpringLocalPosition;
+
+        _ReactorTransform = currentSpringPrefab.GetChild(0);
+        _ReactorTransform.parent = null;
+        _ReactorTransform.position = _ReactorPosition;
     }
-
-    private void PositionConnectic() 
+    //Fonction permettant d'orienter le reacteur en fonction de l'orientation du véhicul
+    private void ReactorOrientation()
     {
-        _CurrentConnecticTransform.position = _SelfTransform.position + _ConnecticPosition;
+        //_ReactorTransform.forward = _SelfTransform.forward;
+        //_ReactorTransform.eulerAngles = new Vector3(270, 180, 0);
+        _ReactorTransform.up = _SelfTransform.forward;
     }
 }
