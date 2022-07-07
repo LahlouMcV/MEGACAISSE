@@ -303,7 +303,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1751845048
 Transform:
   m_ObjectHideFlags: 0
@@ -3477,7 +3477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6294909625013883940
 Transform:
   m_ObjectHideFlags: 0
@@ -3609,7 +3609,7 @@ GameObject:
   - component: {fileID: 1958101932}
   m_Layer: 0
   m_Name: Vehicle
-  m_TagString: Untagged
+  m_TagString: Vehicle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3660,7 +3660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f50947d3d5879b49add86e96dddc40d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _VehicleStats: {fileID: 11400000, guid: 2041df86552f5504a9216f1ec5f257c5, type: 2}
+  _VehicleStats: {fileID: 11400000, guid: e7e0a02c63b012943bf1980c41ff762b, type: 2}
   _VehicleMovement: {fileID: 6294909625220221583}
   _VehicleGravity: {fileID: 6294909625220221581}
   _VehicleSoundFeedback: {fileID: 1520058366}
@@ -4522,7 +4522,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6294909625936287578
 Transform:
   m_ObjectHideFlags: 0
@@ -4681,7 +4681,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &634687941621525068
 Transform:
   m_ObjectHideFlags: 0

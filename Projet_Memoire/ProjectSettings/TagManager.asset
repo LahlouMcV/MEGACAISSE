@@ -11,6 +11,7 @@ TagManager:
   - Ground
   - Wall
   - Obstacle
+  - Vehicle
   layers:
   - Default
   - TransparentFX

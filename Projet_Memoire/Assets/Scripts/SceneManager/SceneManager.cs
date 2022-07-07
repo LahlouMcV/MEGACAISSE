@@ -46,4 +46,10 @@ public class SceneManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneNum);
     }
+
+    public void TriggerWinCondition()
+    {
+        //Ici Il faut avoir l'animation
+        Invoke("GotToMainMenu", 2.5f);
+    }
 }
