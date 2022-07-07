@@ -127,7 +127,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
                 Interactable.Rigidbody.isKinematic = false;
                 Interactable = null;
             }
-            else if (ObjectGrabbed == true && HighlightedSlot != null)
+            else if (ObjectGrabbed == true && HighlightedSlot != null && HighlightedSlot.ConnectedModule == null)
             {
                 ObjectGrabbed = false;
                 Interactable.MainTransform.parent = Vehicle;
