@@ -18,7 +18,6 @@ public class Slot : MonoBehaviour
 
     public void RemoveModule()
     {
-        Debug.Log("Module Removed...");
         ConnectedModule.OnSlot = false;
         ConnectedModule.linkedSlot = null;
         ConnectedModule = null;
