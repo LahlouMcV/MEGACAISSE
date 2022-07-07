@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
-	<object class="EventFolder" id="{ba87e17c-8f50-48bf-af72-a7bf25a4db4f}">
+	<object class="EventFolder" id="{459b1c4e-ef94-4fea-99eb-0af57cf58d22}">
 		<property name="name">
-			<value>02.PlayerActions</value>
+			<value>03.TableauDeBord</value>
 		</property>
 		<relationship name="folder">
 			<destination>{12085e46-757b-4c6e-9cdc-af590cd735a9}</destination>
