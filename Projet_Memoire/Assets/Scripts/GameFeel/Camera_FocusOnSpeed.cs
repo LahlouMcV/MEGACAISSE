@@ -8,8 +8,7 @@ public class Camera_FocusOnSpeed : MonoBehaviour
 
     [SerializeField] private float _MaxFovAdded; //L'ajout maximal de FOV que l'on ajoute par rapport au FOV initiale
 
-    private float _InitFOV; //FOV initiale
-    private float _MaxFOV; //FOV maximal que l'on peut atteindre
+    [SerializeField] private AnimationCurve _AnimationCurve;
 
     private float _CurrentFOV; //FOV que l'on cherche a appliquer
 
@@ -20,15 +19,11 @@ public class Camera_FocusOnSpeed : MonoBehaviour
     {
         _Cam = Camera.main;
         _VehiculeManager = FindObjectOfType<VehicleManager>();
-
-        _InitFOV = _Cam.fieldOfView;
-        _MaxFOV = _InitFOV+ _MaxFovAdded;
-        _CurrentFOV = _InitFOV;
     }
 
     void Update()
     {
-        _CurrentFOV = Mathf.Lerp(_InitFOV, _MaxFOV, SpeedRation());
+        _CurrentFOV = _AnimationCurve.Evaluate(SpeedRation());
         _Cam.fieldOfView = _CurrentFOV;
     }
 
