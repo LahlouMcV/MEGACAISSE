@@ -17,8 +17,8 @@ public class VehicleCollisionManager : MonoBehaviour
 
     public void CollidedWithWall(HitBoxSide side, Transform wall)
     {
-        Vector3 aimPosition = Vector3.zero;
-        Quaternion aimRotation = Quaternion.identity;
+        Vector3 aimPosition = this.transform.position;
+        Quaternion aimRotation = this.transform.rotation;
         _VehicleManager.HurtSide(_VehicleManager._VehicleStats.DamageWhenWallCollision, side);
         _VehicleManager._VehicleSoundFeedback.HitWall(side);
         switch (side)
@@ -116,6 +116,25 @@ public class VehicleCollisionManager : MonoBehaviour
         Debug.Log("Obstacle hit " + side + " side");
         Obstacle hitObstacle = obstacle.GetComponent<Obstacle>();
         _VehicleManager.HurtSide(hitObstacle.Damage, side);
+        switch (side)
+        {
+            case HitBoxSide.Up:
+                break;
+            case HitBoxSide.Down:
+                break;
+            case HitBoxSide.Left:
+                OnCollidedWithLeft.Invoke();
+                break;
+            case HitBoxSide.Right:
+                OnCollidedWithRight.Invoke();
+                break;
+            case HitBoxSide.Forward:
+                OnCollidedWithFront.Invoke();
+                break;
+            case HitBoxSide.Back:
+                OnCollidedWithBack.Invoke();
+                break;
+        }
         Destroy(obstacle.gameObject);
     }
 
