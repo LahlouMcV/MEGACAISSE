@@ -66,7 +66,7 @@ public class VehicleCollisionManager : MonoBehaviour
                             i = -1;
                         }
                         aimPosition = this.transform.position - this.transform.forward * 2;
-                        aimPosition = new Vector3(aimPosition.x, 5, aimPosition.z);
+                        aimPosition = new Vector3(aimPosition.x, this.transform.position.y, aimPosition.z);
                         aimRotation = this.transform.rotation * Quaternion.AngleAxis(30 * i, this.transform.up);
                     }
                 }
@@ -101,7 +101,7 @@ public class VehicleCollisionManager : MonoBehaviour
                             i = -1;
                         }
                         aimPosition = this.transform.position + this.transform.forward * 2;
-                        aimPosition = new Vector3(aimPosition.x, 5, aimPosition.z);
+                        aimPosition = new Vector3(aimPosition.x, this.transform.position.y, aimPosition.z);
                         aimRotation = this.transform.rotation * Quaternion.AngleAxis(30 * i, this.transform.up);
                     }
                 }

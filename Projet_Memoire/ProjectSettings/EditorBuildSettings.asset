@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainLevel/MainLevel.unity
     guid: 8dc146eef5e3ce149b0b32cbca12e83f
   - enabled: 1
-    path: Assets/Scenes/LD/Circuit_Test/LD_Circuit_Placeholder.unity
-    guid: 81800d9a52248ad4fab3c55fe174a16f
-  - enabled: 1
     path: Assets/Scenes/Compos/boutons + switchs.unity
     guid: 0ec379d1acc4c5a44b159370b67efd11
   - enabled: 1

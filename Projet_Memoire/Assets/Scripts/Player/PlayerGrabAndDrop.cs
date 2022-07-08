@@ -47,16 +47,16 @@ public class PlayerGrabAndDrop : MonoBehaviour
 
     private void Update()
     {
+        _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         //If in normal FPS controls mode
-        if(Active)
+        if (Active)
         {
             //Launch a raycast to check the interactable layer
-            Ray _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             Physics.Raycast(_ray, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
 
 
             //If there's a collider than it is possible to grab the object
-            if (hit.collider != null && hit.collider.CompareTag("Interactable") && ObjectGrabbed == false)
+            if (hit.collider != null && (hit.collider.CompareTag("Interactable") || hit.collider.CompareTag("Controller_Module")) && ObjectGrabbed == false)
             {
                 Interactable = hit.collider.GetComponentInChildren<ControlModule>();
             }
@@ -66,8 +66,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
             }
 
             //Launch a raycast to check the slot layer
-            Ray _rayForSlot = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Physics.Raycast(_rayForSlot, out slotHit, Mathf.Infinity, LayerMask.GetMask("Slot"));
+            Physics.Raycast(_ray, out slotHit, Mathf.Infinity, LayerMask.GetMask("Slot"));
 
             //If there's a collider than it is possible to drop the object onto the slot
             if (slotHit.collider != null && slotHit.collider.CompareTag("Slot"))
@@ -92,9 +91,6 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
         else
         {
-            _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-            Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.blue);
-            
             Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
             if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
             {
@@ -105,6 +101,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
                 module = null;
             }
         }
+        
     }
 
     private void LeftMouseButtonClicked()
@@ -145,8 +142,6 @@ public class PlayerGrabAndDrop : MonoBehaviour
         {
             if(module != null)
             {
-                _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
-                Debug.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100, Color.magenta, 1000000);
                 //Debug.Break();
                 Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
                 if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
@@ -180,18 +175,18 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
     }
 
-    /*void OnGUI()
+    void OnGUI()
     {
         GUI.skin.label.fontSize = 72;
         GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
-        GUILayout.Label("Target cursor world pos : " + CursorPosition);
-    }*/
+    }
 
     Ray _ray;
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(_ray.origin, 0.5f);
+        Gizmos.DrawLine(_ray.origin, _ray.origin + _ray.direction * 100);
     }
 
 

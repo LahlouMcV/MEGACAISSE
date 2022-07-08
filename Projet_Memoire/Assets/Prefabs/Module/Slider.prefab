@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17feac5590975844e91af60f7558e468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputMultiplier: 1
   MainTransform: {fileID: 3108494583979097635}
   Rigidbody: {fileID: 8304435231434380547}
   currentInputValue: 0
@@ -332,7 +333,7 @@ GameObject:
   - component: {fileID: 2664959596015901486}
   m_Layer: 6
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,7 +429,7 @@ GameObject:
   - component: {fileID: 3386066172689213515}
   m_Layer: 6
   m_Name: SliderMax
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

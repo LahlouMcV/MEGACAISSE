@@ -21,10 +21,5 @@ public class ControlBoardWeapon : MonoBehaviour
 
         //Shoot Functions
         _WeaponManager._WeaponShoot.ShootWeapon(_WeaponSlotGroupe.Shoot.currentInputValue);
-
-        //Camera Position
-        if (_WeaponSlotGroupe.CameraPos1.currentInputValue > 0) _WeaponManager._WeaponAim.ChangeCameraPosition(0);
-        if (_WeaponSlotGroupe.CameraPos2.currentInputValue > 0) _WeaponManager._WeaponAim.ChangeCameraPosition(1);
-        if (_WeaponSlotGroupe.CameraPos3.currentInputValue > 0) _WeaponManager._WeaponAim.ChangeCameraPosition(2);
     }
 }

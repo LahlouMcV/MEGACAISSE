@@ -17,6 +17,9 @@ MonoBehaviour:
   TurnSpeed: 75
   StraffingDistance: 100
   Acceleration: 100
+  AimSensitivity: 0.2
+  RateOfFire: 0.5
+  WeaponRange: 1000
   Drag: 8
   Gravity: 9.8
   FreefallGravity: 10
