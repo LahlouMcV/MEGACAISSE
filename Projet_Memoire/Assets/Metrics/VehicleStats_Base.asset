@@ -25,6 +25,6 @@ MonoBehaviour:
   FreefallGravity: 10
   TerminalVelocity: 40
   FloatForce: 15
-  FloatHeight: 10
+  FloatHeight: 13
   DamageWhenWallCollision: 2
   FallDamage: 5

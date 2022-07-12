@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8098853786682588682
+--- !u!114 &-8907556339081830318
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerActions/InteractWithModule
+  m_Name: event:/03.PlayerActions/InteractWithModule
   m_EditorClassIdentifier: 
-  Path: event:/PlayerActions/InteractWithModule
+  Path: event:/03.PlayerActions/InteractWithModule
   Guid:
     Data1: -1720724770
     Data2: 1286403731
@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-7358543748885400506
+--- !u!114 &-7121655700736292110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,14 +37,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Impacts/ObstacleHit
+  m_Name: event:/01.Impacts/WallHit
   m_EditorClassIdentifier: 
-  Path: event:/Impacts/ObstacleHit
+  Path: event:/01.Impacts/WallHit
   Guid:
-    Data1: 705589438
-    Data2: 1113971668
-    Data3: -490993508
-    Data4: 1114176938
+    Data1: -1410193768
+    Data2: 1083560984
+    Data3: -2127981388
+    Data4: 1141381275
   Banks:
   - {fileID: -3592886030099116022}
   IsStream: 0
@@ -54,7 +54,161 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-6079458071786602276
+--- !u!114 &-7115476482763022842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/05.Vehicle/WeaponRotate
+  m_EditorClassIdentifier: 
+  Path: event:/05.Vehicle/WeaponRotate
+  Guid:
+    Data1: 1594483944
+    Data2: 1262861831
+    Data3: -1189768541
+    Data4: -198450751
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-5720372417529006137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/05.Vehicle/WeaponShoot
+  m_EditorClassIdentifier: 
+  Path: event:/05.Vehicle/WeaponShoot
+  Guid:
+    Data1: -376544129
+    Data2: 1175949586
+    Data3: 1695135409
+    Data4: 1309129348
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3592886030099116022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637928116097892037
+  FileSizes:
+  - Name: Desktop
+    Value: 604480
+  Exists: 1
+--- !u!114 &-2363331211308944571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637928116097940800
+  FileSizes:
+  - Name: Desktop
+    Value: 1296
+  Exists: 1
+--- !u!114 &-1495665757876216016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03.PlayerActions/GrabModule
+  m_EditorClassIdentifier: 
+  Path: event:/03.PlayerActions/GrabModule
+  Guid:
+    Data1: -1158610773
+    Data2: 1086436371
+    Data3: 223196816
+    Data4: 1760556157
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -2363331211308944571}
+  - {fileID: -3592886030099116022}
+  EditorEvents:
+  - {fileID: 8815027596407011328}
+  - {fileID: -5720372417529006137}
+  - {fileID: 7431522897117260831}
+  - {fileID: -7121655700736292110}
+  - {fileID: -1495665757876216016}
+  - {fileID: 8481379743013681905}
+  - {fileID: 6188382802897765807}
+  - {fileID: -8907556339081830318}
+  - {fileID: -7115476482763022842}
+  - {fileID: 4846376896973850103}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -3592886030099116022}
+  StringsBanks:
+  - {fileID: -2363331211308944571}
+  cacheTime: 637928116097940800
+  cacheVersion: 10
+--- !u!114 &2681968726314731465
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,7 +232,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5458642092648266949
+--- !u!114 &4846376896973850103
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,108 +242,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Vehicle/Motor
+  m_Name: event:/03.PlayerActions/DropModule
   m_EditorClassIdentifier: 
-  Path: event:/Vehicle/Motor
-  Guid:
-    Data1: 1079753004
-    Data2: 1173542414
-    Data3: -2118200446
-    Data4: -671223843
-  Banks:
-  - {fileID: -3592886030099116022}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6079458071786602276}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 12120
---- !u!114 &-3592886030099116022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 637929583519270355
-  FileSizes:
-  - Name: Desktop
-    Value: 602368
-  Exists: 1
---- !u!114 &-2363331211308944571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637929583519310784
-  FileSizes:
-  - Name: Desktop
-    Value: 1184
-  Exists: 1
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: -2363331211308944571}
-  - {fileID: -3592886030099116022}
-  EditorEvents:
-  - {fileID: -5458642092648266949}
-  - {fileID: 6410053402123609550}
-  - {fileID: 3888159019630900203}
-  - {fileID: 8475831472327846333}
-  - {fileID: 7807691452486540827}
-  - {fileID: -7358543748885400506}
-  - {fileID: -8098853786682588682}
-  - {fileID: 491152300275665712}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -3592886030099116022}
-  StringsBanks:
-  - {fileID: -2363331211308944571}
-  cacheTime: 637929583519310784
-  cacheVersion: 10
---- !u!114 &491152300275665712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerActions/DropModule
-  m_EditorClassIdentifier: 
-  Path: event:/PlayerActions/DropModule
+  Path: event:/03.PlayerActions/DropModule
   Guid:
     Data1: -998345994
     Data2: 1332682944
@@ -204,7 +259,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &3888159019630900203
+--- !u!114 &6188382802897765807
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,14 +269,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Impacts/WallHit
+  m_Name: event:/01.Impacts/ObstacleHit
   m_EditorClassIdentifier: 
-  Path: event:/Impacts/WallHit
+  Path: event:/01.Impacts/ObstacleHit
   Guid:
-    Data1: -1410193768
-    Data2: 1083560984
-    Data3: -2127981388
-    Data4: 1141381275
+    Data1: 705589438
+    Data2: 1113971668
+    Data3: -490993508
+    Data4: 1114176938
   Banks:
   - {fileID: -3592886030099116022}
   IsStream: 0
@@ -231,7 +286,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6410053402123609550
+--- !u!114 &7431522897117260831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,9 +296,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Impacts/GroundHit
+  m_Name: event:/01.Impacts/GroundHit
   m_EditorClassIdentifier: 
-  Path: event:/Impacts/GroundHit
+  Path: event:/01.Impacts/GroundHit
   Guid:
     Data1: 521100432
     Data2: 1180897800
@@ -258,7 +313,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7807691452486540827
+--- !u!114 &8481379743013681905
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -268,9 +323,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiances/2D/Mecha_Interior
+  m_Name: event:/06.Ambiances/2D/Mecha_Interior
   m_EditorClassIdentifier: 
-  Path: event:/Ambiances/2D/Mecha_Interior
+  Path: event:/06.Ambiances/2D/Mecha_Interior
   Guid:
     Data1: -863614029
     Data2: 1111392470
@@ -285,7 +340,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 46977
---- !u!114 &8475831472327846333
+--- !u!114 &8815027596407011328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -295,20 +350,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/PlayerActions/GrabModule
+  m_Name: event:/05.Vehicle/Motor
   m_EditorClassIdentifier: 
-  Path: event:/PlayerActions/GrabModule
+  Path: event:/05.Vehicle/Motor
   Guid:
-    Data1: -1158610773
-    Data2: 1086436371
-    Data3: 223196816
-    Data4: 1760556157
+    Data1: 1079753004
+    Data2: 1173542414
+    Data3: -2118200446
+    Data4: -671223843
   Banks:
   - {fileID: -3592886030099116022}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 2681968726314731465}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 12120

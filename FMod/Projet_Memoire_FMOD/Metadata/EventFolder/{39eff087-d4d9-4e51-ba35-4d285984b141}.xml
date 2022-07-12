@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{39eff087-d4d9-4e51-ba35-4d285984b141}">
+		<property name="note">
+			<value>Color Code :
+
+Red -&gt; Event has no sound
+Yellow -&gt; Event has a placeholder sound
+Green -&gt; Event has a suitable quality awaiting validation
+Blue -&gt; Event has been validated</value>
+		</property>
+		<property name="name">
+			<value>00.Legend</value>
+		</property>
+		<relationship name="folder">
+			<destination>{12085e46-757b-4c6e-9cdc-af590cd735a9}</destination>
+		</relationship>
+	</object>
+</objects>

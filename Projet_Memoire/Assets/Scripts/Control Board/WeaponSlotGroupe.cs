@@ -14,8 +14,4 @@ public class WeaponSlotGroupe
     [Header("Shooting Functions")]
     public Slot Shoot;
 
-    [Header("Camera Position")]
-    public Slot CameraPos1;
-    public Slot CameraPos2;
-    public Slot CameraPos3;
 }
