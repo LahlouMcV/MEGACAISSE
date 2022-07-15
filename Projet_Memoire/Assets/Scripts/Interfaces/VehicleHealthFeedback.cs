@@ -3,33 +3,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class VehicleHealthFeedback : MonoBehaviour
 {
     [SerializeField] VehicleManager _VehicleManager;
-    [SerializeField] TMP_Text CockpitHealth;
-    [SerializeField] TMP_Text FrontSideHealth;
-    [SerializeField] TMP_Text RightSideHealth;
-    [SerializeField] TMP_Text LeftSideHealth;
-    [SerializeField] TMP_Text BackSideHealth;
+    [SerializeField] GameObject CockpitHealth;
+    [SerializeField] GameObject FrontSideHealth;
+    [SerializeField] GameObject RightSideHealth;
+    [SerializeField] GameObject LeftSideHealth;
+    [SerializeField] GameObject BackSideHealth;
 
-    [SerializeField] Image CockpitPicto;
-    [SerializeField] Image FrontSidePicto;
-    [SerializeField] Image RightSidePicto;
-    [SerializeField] Image LeftSidePicto;
-    [SerializeField] Image BackSidePicto;
+    [SerializeField] GameObject CockpitPicto;
+    [SerializeField] GameObject FrontSidePicto;
+    [SerializeField] GameObject RightSidePicto;
+    [SerializeField] GameObject LeftSidePicto;
+    [SerializeField] GameObject BackSidePicto;
+
+    [SerializeField] GameObject FrontIndicator;
+    [SerializeField] GameObject RightIndicator;
+    [SerializeField] GameObject LeftIndicator;
+    [SerializeField] GameObject BackIndicator;
 
     private void Update()
     {
-        CockpitHealth.text = _VehicleManager.MainHealthPoints.ToString();
-        FrontSideHealth.text = _VehicleManager.FrontSideHealth.ToString();
-        RightSideHealth.text = _VehicleManager.RightSideHealth.ToString();
-        LeftSideHealth.text = _VehicleManager.LeftSideHealth.ToString();
-        BackSideHealth.text = _VehicleManager.BackSideHealth.ToString();
+        CockpitHealth.GetComponent<TMP_Text>().text = _VehicleManager.MainHealthPoints.ToString();
+        FrontSideHealth.GetComponent<TMP_Text>().text = _VehicleManager.FrontSideHealth.ToString();
+        RightSideHealth.GetComponent<TMP_Text>().text = _VehicleManager.RightSideHealth.ToString();
+        LeftSideHealth.GetComponent<TMP_Text>().text = _VehicleManager.LeftSideHealth.ToString();
+        BackSideHealth.GetComponent<TMP_Text>().text = _VehicleManager.BackSideHealth.ToString();
     }
 
-    public void collisionInterface(Image img)
+    public void CollisionInterfaceFront()
     {
-
+        FrontIndicator.GetComponent<LightUI>().Alert();
+        FrontSidePicto.GetComponent<MoverUI>().ShakeIt();
+        FrontSideHealth.GetComponent<MoverUI>().ShakeIt();
+        FrontSideHealth.GetComponent<ColorUISetter>().FeedBack();
     }
+    public void CollisionInterfaceRight()
+    {
+        RightIndicator.GetComponent<LightUI>().Alert();
+        RightSidePicto.GetComponent<MoverUI>().ShakeIt();
+        RightSideHealth.GetComponent<MoverUI>().ShakeIt();
+        RightSideHealth.GetComponent<ColorUISetter>().FeedBack();
+    }
+    public void CollisionInterfaceLeft()
+    {
+        LeftIndicator.GetComponent<LightUI>().Alert();
+        LeftSidePicto.GetComponent<MoverUI>().ShakeIt();
+        LeftSideHealth.GetComponent<MoverUI>().ShakeIt();
+        LeftSideHealth.GetComponent<ColorUISetter>().FeedBack();
+    }
+    public void CollisionInterfaceBack()
+    {
+        BackIndicator.GetComponent<LightUI>().Alert();
+        BackSidePicto.GetComponent<MoverUI>().ShakeIt();
+        BackSideHealth.GetComponent<MoverUI>().ShakeIt();
+        BackSideHealth.GetComponent<ColorUISetter>().FeedBack();
+    }
+    public void CollisionInterfaceCockpit()
+    {
+        CockpitPicto.GetComponent<MoverUI>().ShakeIt();
+        CockpitHealth.GetComponent<MoverUI>().ShakeIt();
+        CockpitHealth.GetComponent<ColorUISetter>().FeedBack();
+    }
+
+
 }
