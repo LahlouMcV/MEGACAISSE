@@ -27,18 +27,18 @@ public class VehicleGravity : MonoBehaviour
         }
         else
         {
-            currentForce = Mathf.Lerp(currentForce, 0, 0.1f);
+            currentForce -= currentForce * _VehicleManager._VehicleStats.Drag * Time.fixedDeltaTime;
         }
 
         if(GroundHit.collider != null)
         {
             this.transform.rotation = Quaternion.Lerp(this.transform.rotation,
-                Quaternion.Euler(new Vector3(GroundHit.transform.rotation.eulerAngles.x, this.transform.rotation.eulerAngles.y, this.transform.rotation.eulerAngles.z)),
-                0.1f);
+                Quaternion.Euler(new Vector3(GroundHit.transform.rotation.eulerAngles.x, this.transform.rotation.eulerAngles.y, GroundHit.transform.rotation.eulerAngles.z)),
+                0.2f);
         }
 
         Mathf.Clamp(currentForce, -_VehicleManager._VehicleStats.TerminalVelocity, _VehicleManager._VehicleStats.TerminalVelocity);
-        this.transform.position += (currentForce * this.transform.up * Time.deltaTime);
+        this.transform.position += (currentForce * this.transform.up * Time.fixedDeltaTime);
     }
 
     private void RaiseVehicle()

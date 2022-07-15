@@ -9,6 +9,9 @@ public class SceneManager : MonoBehaviour
     private InputAction Escape;
     public static SceneManager _SceneManager;
 
+    [SerializeField] GameObject VictoryFeedback;
+    [SerializeField] GameObject LoseFeedback;
+
     private void Awake()
     {
         //Escape Input
@@ -50,6 +53,11 @@ public class SceneManager : MonoBehaviour
     public void TriggerWinCondition()
     {
         //Ici Il faut avoir l'animation
-        Invoke("GotToMainMenu", 2.5f);
+        Invoke("GoToMainMenu", 2.5f);
+    }
+
+    public void TriggerLoseCondition()
+    {
+        Invoke("GoToMainMenu", 2.5f);
     }
 }
