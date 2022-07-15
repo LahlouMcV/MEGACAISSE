@@ -28,12 +28,12 @@ public class VehicleCollisionManager : MonoBehaviour
             case HitBoxSide.Down:
                 break;
             case HitBoxSide.Left:
-                aimPosition = this.transform.position + this.transform.right * 2;
+                aimPosition = this.transform.position + this.transform.right * 5;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(30, this.transform.up);
                 OnCollidedWithLeft.Invoke();
                 break;
             case HitBoxSide.Right:
-                aimPosition = this.transform.position - this.transform.right * 2;
+                aimPosition = this.transform.position - this.transform.right * 5;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(-30, this.transform.up);
                 OnCollidedWithRight.Invoke();
                 break;
