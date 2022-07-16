@@ -7,6 +7,7 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] VehicleManager _VehicleManager;
     [SerializeField] Camera WeaponCamera;
     [SerializeField] GameObject WeaponBullet;
+    public FMODUnity.StudioEventEmitter SoundFeedback;
     RaycastHit hit;
     private bool Shot = true;
 
@@ -18,7 +19,7 @@ public class WeaponShoot : MonoBehaviour
             Shot = false;
 
             //Spawn Shot Feedback
-
+            SoundFeedback.Play();
             Invoke("SpawnExplosion", 0.25f);
             Invoke("Reload", _VehicleManager._VehicleStats.RateOfFire);
         }

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{463c6fa9-f28c-4d3e-81a8-c227077017a7}">
+		<property name="assetPath">
+			<value>SciFiEffects-011.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>3.3700000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f16a6cd-7483-4b06-9530-691115c0c347}</destination>
+		</relationship>
+	</object>
+</objects>

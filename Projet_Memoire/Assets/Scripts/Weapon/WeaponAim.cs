@@ -6,11 +6,15 @@ public class WeaponAim : MonoBehaviour
 {
     [SerializeField] VehicleManager _VehicleManager;
     [SerializeField] Transform _WeaponCamera;
+    public FMODUnity.StudioEventEmitter SoundFeedback;
 
     public void AimUpDown(float input)
     {
-        if (input != 0) Debug.Log("Aiming like a king");
-
+        if (input > 0) SoundFeedback.Play();
+        else
+        {
+            SoundFeedback.Stop();
+        }
         _WeaponCamera.Rotate(input * _VehicleManager._VehicleStats.AimSensitivity, 0, 0, Space.Self);
         if (_WeaponCamera.localEulerAngles.x > 45 && _WeaponCamera.localEulerAngles.x < 310)
         {

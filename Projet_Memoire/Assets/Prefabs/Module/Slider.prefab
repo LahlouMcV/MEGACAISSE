@@ -155,6 +155,8 @@ MonoBehaviour:
   InputFeedback: {fileID: 124079515822542452}
   GreenLight: {fileID: 2100000, guid: 7bce84c1d87594d45a893b4006fc26d0, type: 2}
   RedLight: {fileID: 2100000, guid: 21123987d40dcc54f8ea1105a292e3a7, type: 2}
+  ActivateSound: {fileID: 5309494464438564032}
+  DeactivateSound: {fileID: 0}
   StartPosition: {x: 0, y: 1.04, z: -0.28}
   EndPosition: {x: 0, y: 1.04, z: 1}
   StartPos: {fileID: 1521383758153900914}
@@ -171,6 +173,7 @@ GameObject:
   - component: {fileID: 3108494583979097632}
   - component: {fileID: 3108494583979097646}
   - component: {fileID: 8304435231434380547}
+  - component: {fileID: 5309494464438564032}
   m_Layer: 6
   m_Name: Slider
   m_TagString: Interactable
@@ -236,6 +239,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5309494464438564032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3108494583979097647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -431883579
+      Data2: 1168058872
+      Data3: -1306940014
+      Data4: 874604068
+    Path: event:/04.TableauDeBord/SliderInteract
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &3321437366671497273
 GameObject:
   m_ObjectHideFlags: 0

@@ -51,6 +51,7 @@ public class Slingshot : ControlModule
         Debug.Log("Pulling Slingshot");
         MovingSlider = true;
         startPos = this.transform.localPosition;
+        ActivateSound.Play();
         Ray _rayForSlot = Camera.main.ScreenPointToRay(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
         Physics.Raycast(_rayForSlot, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
@@ -67,6 +68,7 @@ public class Slingshot : ControlModule
         MovingSlider = false;
         float z = this.transform.localPosition.z;
         Mathf.Clamp(z, StartPosition.z, EndPosition.z);
+        DeactivateSound.Play();
         float inputValue = ((z - StartPosition.z) / (EndPosition.z - StartPosition.z)) * InputMultiplier;
         this.ChangeInputValue(Mathf.Clamp(inputValue, 0, 1 * InputMultiplier));
         InputFeedback.material = GreenLight;

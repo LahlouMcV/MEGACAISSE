@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4521227d-dc16-48e6-985e-9dd392721200}">
+		<property name="name">
+			<value>WeaponAim</value>
+		</property>
+		<relationship name="folder">
+			<destination>{c8d6f9d8-8cbc-4f65-80f7-4fd154ed3b09}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f69488e6-2214-441a-b146-67b793f05fc2}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f69488e6-2214-441a-b146-67b793f05fc2}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
