@@ -20,10 +20,31 @@ public class VehicleHealthFeedback : MonoBehaviour
     [SerializeField] GameObject LeftSidePicto;
     [SerializeField] GameObject BackSidePicto;
 
+    [SerializeField] GameObject CockpitPictoJauge;
+    [SerializeField] GameObject FrontSidePictoJauge;
+    [SerializeField] GameObject RightSidePictoJauge;
+    [SerializeField] GameObject LeftSidePictoJauge;
+    [SerializeField] GameObject BackSidePictoJauge;
+
     [SerializeField] GameObject FrontIndicator;
     [SerializeField] GameObject RightIndicator;
     [SerializeField] GameObject LeftIndicator;
     [SerializeField] GameObject BackIndicator;
+
+    float MainHealthPointsMax=0;
+    float FrontSideHealthMax=0;
+    float RightSideHealthMax=0;
+    float LeftSideHealthMax=0;
+    float BackSideHealthMax=0;
+
+    private void Start()
+    {
+        MainHealthPointsMax =_VehicleManager.MainHealthPoints;
+        FrontSideHealthMax = _VehicleManager.FrontSideHealth;
+        RightSideHealthMax = _VehicleManager.RightSideHealth;
+        LeftSideHealthMax = _VehicleManager.LeftSideHealth;
+        BackSideHealthMax = _VehicleManager.BackSideHealth;
+    }
 
     private void Update()
     {
@@ -40,6 +61,7 @@ public class VehicleHealthFeedback : MonoBehaviour
         FrontSidePicto.GetComponent<MoverUI>().ShakeIt();
         FrontSideHealth.GetComponent<MoverUI>().ShakeIt();
         FrontSideHealth.GetComponent<ColorUISetter>().FeedBack();
+        SetColorPicto(FrontSidePictoJauge, FrontSideHealthMax, _VehicleManager.FrontSideHealth);
     }
     public void CollisionInterfaceRight()
     {
@@ -47,6 +69,7 @@ public class VehicleHealthFeedback : MonoBehaviour
         RightSidePicto.GetComponent<MoverUI>().ShakeIt();
         RightSideHealth.GetComponent<MoverUI>().ShakeIt();
         RightSideHealth.GetComponent<ColorUISetter>().FeedBack();
+        SetColorPicto(RightSidePictoJauge, RightSideHealthMax, _VehicleManager.RightSideHealth);
     }
     public void CollisionInterfaceLeft()
     {
@@ -54,6 +77,7 @@ public class VehicleHealthFeedback : MonoBehaviour
         LeftSidePicto.GetComponent<MoverUI>().ShakeIt();
         LeftSideHealth.GetComponent<MoverUI>().ShakeIt();
         LeftSideHealth.GetComponent<ColorUISetter>().FeedBack();
+        SetColorPicto(LeftSidePictoJauge, LeftSideHealthMax, _VehicleManager.LeftSideHealth);
     }
     public void CollisionInterfaceBack()
     {
@@ -61,13 +85,20 @@ public class VehicleHealthFeedback : MonoBehaviour
         BackSidePicto.GetComponent<MoverUI>().ShakeIt();
         BackSideHealth.GetComponent<MoverUI>().ShakeIt();
         BackSideHealth.GetComponent<ColorUISetter>().FeedBack();
+        SetColorPicto(BackSidePictoJauge, BackSideHealthMax, _VehicleManager.BackSideHealth);
     }
     public void CollisionInterfaceCockpit()
     {
         CockpitPicto.GetComponent<MoverUI>().ShakeIt();
         CockpitHealth.GetComponent<MoverUI>().ShakeIt();
         CockpitHealth.GetComponent<ColorUISetter>().FeedBack();
+        SetColorPicto(CockpitPictoJauge, MainHealthPointsMax, _VehicleManager.MainHealthPoints);
     }
 
-
+    public void SetColorPicto(GameObject picto, float vieMax, float vieActuelle)
+    {
+        Image img = picto.GetComponent<Image>();
+        img.fillAmount = 1 - (vieActuelle/ vieMax);
+        Debug.Log(img + (1 - (vieActuelle / vieMax)).ToString());
+    }
 }
