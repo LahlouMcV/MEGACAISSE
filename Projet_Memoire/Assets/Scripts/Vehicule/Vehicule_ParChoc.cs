@@ -22,7 +22,7 @@ public class Vehicule_ParChoc : MonoBehaviour
     }
     void LateUpdate()
     {
-        //ReactorOrientation();
+        ReactorOrientation();
     }
 
     //Fonction permettant de faire spawn le par choc
@@ -41,9 +41,6 @@ public class Vehicule_ParChoc : MonoBehaviour
     //Fonction permettant d'orienter le reacteur en fonction de l'orientation du véhicul
     private void ReactorOrientation()
     {
-        //_ReactorTransform.forward = _SelfTransform.forward;
-        //_ReactorTransform.eulerAngles = new Vector3(270, 180, 0);
-        _ReactorTransform.forward = _SpringTransform.forward;
-        //_ReactorTransform.eulerAngles += new Vector3(270, 180, 0);
+        _ReactorTransform.rotation = _SelfTransform.localRotation;
     }
 }
