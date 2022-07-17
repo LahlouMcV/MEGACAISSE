@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4960076715451624155}
   - component: {fileID: 4960076715451624148}
   - component: {fileID: 2074307837458121209}
+  - component: {fileID: 5480365288707395738}
   m_Layer: 6
   m_Name: Switch
   m_TagString: Interactable
@@ -116,6 +117,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5480365288707395738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4960076715451624149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1108726551
+      Data2: 1148450694
+      Data3: -1198411852
+      Data4: -606800398
+    Path: event:/04.TableauDeBord/SwitchClick
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5561515887333639957
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bc791b1d6fa9344a9582fae5a2ca07d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputMultiplier: 1
   MainTransform: {fileID: 4960076715451624153}
   Rigidbody: {fileID: 2074307837458121209}
   currentInputValue: 0
@@ -331,4 +363,6 @@ MonoBehaviour:
   InputFeedback: {fileID: 4785435322435766737}
   GreenLight: {fileID: 2100000, guid: 7bce84c1d87594d45a893b4006fc26d0, type: 2}
   RedLight: {fileID: 2100000, guid: 21123987d40dcc54f8ea1105a292e3a7, type: 2}
+  ActivateSound: {fileID: 5480365288707395738}
+  DeactivateSound: {fileID: 0}
   on: 0

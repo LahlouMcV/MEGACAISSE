@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{9e00ea01-10b5-43b6-a829-00f9a76a9b3c}">
+		<property name="assetPath">
+			<value>Mechanical, Click, Button, Small, Plastic 01 SND11350 3.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.0393125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f16a6cd-7483-4b06-9530-691115c0c347}</destination>
+		</relationship>
+	</object>
+</objects>

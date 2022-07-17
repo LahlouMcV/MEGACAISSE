@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d7698c0d-4c0d-4263-be4a-1f5cacdda3fa}">
+		<property name="assetPath">
+			<value>Mechanical, Ratchet, Toy Ratchet, Wind 06 SND33364.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.32606249999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f16a6cd-7483-4b06-9530-691115c0c347}</destination>
+		</relationship>
+	</object>
+</objects>

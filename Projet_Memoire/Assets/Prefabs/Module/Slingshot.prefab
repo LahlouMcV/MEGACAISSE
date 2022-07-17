@@ -374,6 +374,7 @@ GameObject:
   - component: {fileID: 5476738648282703634}
   - component: {fileID: 5476738648282703644}
   - component: {fileID: 1449482100005997617}
+  - component: {fileID: 3699119596983310447}
   m_Layer: 6
   m_Name: Slingshot
   m_TagString: Interactable
@@ -440,6 +441,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3699119596983310447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476738648282703645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1218009227
+      Data2: 1263852036
+      Data3: -1957425509
+      Data4: -760777874
+    Path: event:/04.TableauDeBord/SlingshotPull
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5939842047810267479
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +598,7 @@ GameObject:
   - component: {fileID: 8788831884976420052}
   - component: {fileID: 1180282817815572922}
   - component: {fileID: 8788831884976420059}
+  - component: {fileID: 2346707682515354992}
   m_Layer: 6
   m_Name: Controller_Module
   m_TagString: Controller_Module
@@ -666,6 +698,8 @@ MonoBehaviour:
   InputFeedback: {fileID: 7393237388510025542}
   GreenLight: {fileID: 2100000, guid: 7bce84c1d87594d45a893b4006fc26d0, type: 2}
   RedLight: {fileID: 2100000, guid: 21123987d40dcc54f8ea1105a292e3a7, type: 2}
+  ActivateSound: {fileID: 3699119596983310447}
+  DeactivateSound: {fileID: 2346707682515354992}
   Steps: 4
   StartPosition: {x: 0, y: 1.04, z: 0.1}
   EndPosition: {x: 0, y: 1.04, z: -0.9}
@@ -684,3 +718,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2346707682515354992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8788831884976420058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1127075781
+      Data2: 1139456184
+      Data3: 585960342
+      Data4: -1881659341
+    Path: event:/04.TableauDeBord/SlingshotRelease
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

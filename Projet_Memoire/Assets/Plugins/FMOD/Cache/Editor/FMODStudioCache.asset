@@ -53,7 +53,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 2187
 --- !u!114 &-7115476482763022842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76,11 +76,38 @@ MonoBehaviour:
   - {fileID: -3592886030099116022}
   IsStream: 0
   Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 728
+--- !u!114 &-6419134081587607150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/SlingshotPull
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/SlingshotPull
+  Guid:
+    Data1: -1218009227
+    Data2: 1263852036
+    Data3: -1957425509
+    Data4: -760777874
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 812
 --- !u!114 &-5720372417529006137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,10 +122,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/05.Vehicle/WeaponShoot
   Guid:
-    Data1: -376544129
-    Data2: 1175949586
-    Data3: 1695135409
-    Data4: 1309129348
+    Data1: -438522211
+    Data2: 1118824048
+    Data3: -1639400307
+    Data4: 39472342
   Banks:
   - {fileID: -3592886030099116022}
   IsStream: 0
@@ -107,7 +134,34 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 3576
+--- !u!114 &-4016568363315318775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/SlingshotRelease
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/SlingshotRelease
+  Guid:
+    Data1: 1127075781
+    Data2: 1139456184
+    Data3: 585960342
+    Data4: -1881659341
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 718
 --- !u!114 &-3592886030099116022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +177,10 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637932280480988571
+  lastModified: 637935876791347751
   FileSizes:
   - Name: Desktop
-    Value: 604480
+    Value: 4215488
   Exists: 1
 --- !u!114 &-2363331211308944571
 MonoBehaviour:
@@ -143,10 +197,10 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637932280480995617
+  lastModified: 637935876791387882
   FileSizes:
   - Name: Desktop
-    Value: 1296
+    Value: 2068
   Exists: 1
 --- !u!114 &-1495665757876216016
 MonoBehaviour:
@@ -175,6 +229,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1303162083006138324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/Powered
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/Powered
+  Guid:
+    Data1: 1651502551
+    Data2: 1150120611
+    Data3: -771682429
+    Data4: -1784635347
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3370
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,13 +282,103 @@ MonoBehaviour:
   - {fileID: -8907556339081830318}
   - {fileID: -7115476482763022842}
   - {fileID: 4846376896973850103}
+  - {fileID: 5919610621683638036}
+  - {fileID: 1948191854925284774}
+  - {fileID: 4746557858564930720}
+  - {fileID: -6419134081587607150}
+  - {fileID: 7616233338480319581}
+  - {fileID: -4016568363315318775}
+  - {fileID: 470708758635750004}
+  - {fileID: -1303162083006138324}
+  - {fileID: 298696178089012384}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3592886030099116022}
   StringsBanks:
   - {fileID: -2363331211308944571}
-  cacheTime: 637932280480995617
+  cacheTime: 637935876791387882
   cacheVersion: 10
+--- !u!114 &298696178089012384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/SwitchClick
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/SwitchClick
+  Guid:
+    Data1: -1108726551
+    Data2: 1148450694
+    Data3: -1198411852
+    Data4: -606800398
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &470708758635750004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/SliderInteract
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/SliderInteract
+  Guid:
+    Data1: -431883579
+    Data2: 1168058872
+    Data3: -1306940014
+    Data4: 874604068
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
+--- !u!114 &1948191854925284774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/ButtonClick
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/ButtonClick
+  Guid:
+    Data1: 1373815589
+    Data2: 1203422748
+    Data3: -1838074738
+    Data4: -1858989607
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &2681968726314731465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +403,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4746557858564930720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/Unpowered
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/Unpowered
+  Guid:
+    Data1: -529661082
+    Data2: 1217400114
+    Data3: 1609176194
+    Data4: -2139172844
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3370
 --- !u!114 &4846376896973850103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,6 +457,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5919610621683638036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/04.TableauDeBord/SlotInserted
+  m_EditorClassIdentifier: 
+  Path: event:/04.TableauDeBord/SlotInserted
+  Guid:
+    Data1: 2085530121
+    Data2: 1271789351
+    Data3: 2146962060
+    Data4: -1717408569
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3370
 --- !u!114 &6188382802897765807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +538,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7616233338480319581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/02.FX/Sparks
+  m_EditorClassIdentifier: 
+  Path: event:/02.FX/Sparks
+  Guid:
+    Data1: -1380072560
+    Data2: 1278010278
+    Data3: -1044826740
+    Data4: -1745653154
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &8481379743013681905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,7 +591,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 46977
+  Length: 16466
 --- !u!114 &8815027596407011328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,11 +612,11 @@ MonoBehaviour:
     Data4: -671223843
   Banks:
   - {fileID: -3592886030099116022}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
   - {fileID: 2681968726314731465}
   MinDistance: 1
   MaxDistance: 20
-  Length: 12120
+  Length: 10824

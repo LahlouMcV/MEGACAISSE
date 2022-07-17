@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 1080248914402700576}
   - component: {fileID: 1080248914402700591}
   - component: {fileID: 6260285132550653442}
+  - component: {fileID: 3561985967903764784}
   m_Layer: 6
   m_Name: Button
   m_TagString: Interactable
@@ -213,6 +214,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3561985967903764784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080248914402700590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1373815589
+      Data2: 1203422748
+      Data3: -1838074738
+      Data4: -1858989607
+    Path: event:/04.TableauDeBord/ButtonClick
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &4252713520213737193
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ff5e9c0187384408f396048488d893, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InputMultiplier: 1
   MainTransform: {fileID: 1080248914402700578}
   Rigidbody: {fileID: 6260285132550653442}
   currentInputValue: 0
@@ -331,3 +363,5 @@ MonoBehaviour:
   InputFeedback: {fileID: 2622949143247887733}
   GreenLight: {fileID: 2100000, guid: 7bce84c1d87594d45a893b4006fc26d0, type: 2}
   RedLight: {fileID: 2100000, guid: 21123987d40dcc54f8ea1105a292e3a7, type: 2}
+  ActivateSound: {fileID: 3561985967903764784}
+  DeactivateSound: {fileID: 0}

@@ -9,6 +9,7 @@ public class Button : ControlModule
         base.ActivateFunction();
         ChangeInputValue(1f * InputMultiplier);
         InputFeedback.material = GreenLight;
+        ActivateSound.Play();
         this.transform.localPosition = new Vector3(0.0f, 0.1f, 0.0f);
     }
 
@@ -16,6 +17,7 @@ public class Button : ControlModule
     {
         base.DeactivateFunction();
         ChangeInputValue(0f);
+        ActivateSound.Play();
         InputFeedback.material = RedLight;
         this.transform.localPosition = new Vector3(0.0f, 1.04f, 0.0f);
     }

@@ -46,6 +46,7 @@ public class SlideModule : ControlModule
     {
         base.ActivateFunction();
         MovingSlider = true;
+        ActivateSound.Play();
         startPos = this.transform.localPosition;
         Ray _rayForSlot = Camera.main.ScreenPointToRay(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
         Physics.Raycast(_rayForSlot, out hit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
@@ -58,6 +59,7 @@ public class SlideModule : ControlModule
     public override void DeactivateFunction()
     {
         base.DeactivateFunction();
+        ActivateSound.Stop();
         MovingSlider = false;
     }
 }

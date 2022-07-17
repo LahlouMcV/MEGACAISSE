@@ -20,6 +20,7 @@ public class Switch : ControlModule
             ChangeInputValue(0f);
             on = false;
             InputFeedback.material = RedLight;
+            ActivateSound.Play();
             this.transform.localRotation = Quaternion.Euler(-10, 0, 0);
         }
         else
@@ -27,6 +28,7 @@ public class Switch : ControlModule
             ChangeInputValue(1f * InputMultiplier);
             on = true;
             InputFeedback.material = GreenLight;
+            ActivateSound.Play();
             this.transform.localRotation = Quaternion.Euler(10, 0, 0);
         }
     }
