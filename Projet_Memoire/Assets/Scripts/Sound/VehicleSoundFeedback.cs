@@ -37,6 +37,6 @@ public class VehicleSoundFeedback : MonoBehaviour
 
     public void HitGround()
     {
-        //GroundHit.Play();
+        GroundHit.Play();
     }
 }

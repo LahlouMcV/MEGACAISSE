@@ -8,6 +8,7 @@ public class WinCondition : MonoBehaviour
     {
         if (other.CompareTag("Vehicle"))
         {
+
             SceneManager._SceneManager.TriggerWinCondition();
         }
     }

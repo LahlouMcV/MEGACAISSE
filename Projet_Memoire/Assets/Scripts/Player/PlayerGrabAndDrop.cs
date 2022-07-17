@@ -175,12 +175,6 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
     }
 
-    void OnGUI()
-    {
-        GUI.skin.label.fontSize = 72;
-        GUILayout.Label("Current mouse position : " + Mouse.current.position.ReadValue());
-    }
-
     Ray _ray;
     private void OnDrawGizmos()
     {
