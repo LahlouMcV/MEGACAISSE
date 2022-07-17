@@ -28,7 +28,7 @@ public class Vehicule_Vrombissement : MonoBehaviour
 
     public void Shake(float magnitude) 
     {
-        StartCoroutine(Shake(0.4f, magnitude));
+        StartCoroutine(Shake(0.25f, magnitude));
     }
     public IEnumerator Shake(float duration, float magnitude) 
     {
