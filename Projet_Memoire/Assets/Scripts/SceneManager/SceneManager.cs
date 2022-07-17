@@ -52,12 +52,41 @@ public class SceneManager : MonoBehaviour
 
     public void TriggerWinCondition()
     {
-        //Ici Il faut avoir l'animation
+        Debug.Log("Triggered Win");
+        StartCoroutine(VictoryAnimation());
         Invoke("GoToMainMenu", 2.5f);
     }
 
     public void TriggerLoseCondition()
     {
+        Debug.Log("Triggered Loss");
+        StartCoroutine(LossAnimation());
         Invoke("GoToMainMenu", 2.5f);
+    }
+
+    IEnumerator VictoryAnimation()
+    {
+        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        float a = 0;
+        while(true)
+        {
+            a += Time.deltaTime;
+            image.color = new Color(0,0,0, a);
+            if (a >= 1) StopAllCoroutines();
+            yield return null;
+        }
+    }
+
+    IEnumerator LossAnimation()
+    {
+        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        float a = 0;
+        while (true)
+        {
+            a += Time.deltaTime;
+            image.color = new Color(0, 0, 0, a);
+            if (a >= 1) StopAllCoroutines();
+            yield return null;
+        }
     }
 }
