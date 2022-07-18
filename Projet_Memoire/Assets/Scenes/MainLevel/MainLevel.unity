@@ -32,11 +32,11 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
+  m_DefaultReflectionMode: 1
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
-  m_CustomReflection: {fileID: 0}
+  m_CustomReflection: {fileID: 7995536730365897021, guid: 0000000000000000d000000000000000, type: 0}
   m_Sun: {fileID: 0}
   m_IndirectSpecularColor: {r: 0.1815683, g: 0.22721489, b: 0.30740938, a: 1}
   m_UseRadianceAmbientProbe: 0
@@ -2746,6 +2746,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5298178650805874881, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1899219
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298178650805874881, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: m_Size.z
+      value: 0.11254333
+      objectReference: {fileID: 0}
+    - target: {fileID: 5298178650805874881, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6294909625220221576, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
       propertyPath: m_Name
       value: Vehicle
@@ -2798,5 +2810,13 @@ PrefabInstance:
       propertyPath: ModuleHolder
       value: 
       objectReference: {fileID: 1561907289}
+    - target: {fileID: 8971053537202660102, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: m_Size.z
+      value: 0.40274572
+      objectReference: {fileID: 0}
+    - target: {fileID: 8971053537202660102, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}
+      propertyPath: m_Center.z
+      value: 0.10364747
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fda120c7c049922419c46d4ea3c87eec, type: 3}

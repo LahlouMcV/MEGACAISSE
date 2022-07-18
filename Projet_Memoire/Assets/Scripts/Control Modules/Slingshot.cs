@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Slingshot : ControlModule
 {
@@ -10,12 +12,20 @@ public class Slingshot : ControlModule
     [SerializeField] Vector3 EndPosition;
     [SerializeField] GameObject StartPos;
     [SerializeField] GameObject EndPos;
+    [SerializeField] GameObject textfield;
+    [SerializeField] GameObject Jauge;
+
 
     private bool MovingSlider = false;
     private int step = 0;
     private RaycastHit hit;
     //private Vector3 startMousePos;
     private Vector3 startPos;
+
+    private void Start()
+    {
+        textfield.GetComponent<TMP_Text>().text = Mathf.Round(InputMultiplier * 100).ToString() + "%";
+    }
 
     private void FixedUpdate()
     {
@@ -38,6 +48,11 @@ public class Slingshot : ControlModule
                       Mathf.Clamp(y, StartPosition.y, EndPosition.y),
                       Mathf.Clamp(z, currentEndPosition, StartPosition.z));
                 Debug.Log(this.transform.localPosition);
+
+                //coucou!
+                Jauge.GetComponent<Image>().fillAmount = currentInputValue / InputMultiplier;
+                textfield.GetComponent<TMP_Text>().text = (currentInputValue).ToString() + "%";
+
                 if (currentInputValue == 0) InputFeedback.material = RedLight;
                 else if (currentInputValue >= 1) InputFeedback.material = GreenLight;
             }

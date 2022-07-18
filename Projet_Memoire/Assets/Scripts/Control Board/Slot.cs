@@ -11,7 +11,7 @@ public class Slot : MonoBehaviour
 
     public void PlugModule(ControlModule module)
     {
-        module.MainTransform.position = this.transform.position + (this.transform.up * 0.1f);
+        module.MainTransform.position = this.transform.position; //+ (this.transform.up * 0.1f);
         module.MainTransform.rotation = this.transform.rotation;
         ConnectedModule = module;
         ConnectedModule.OnSlot = true;

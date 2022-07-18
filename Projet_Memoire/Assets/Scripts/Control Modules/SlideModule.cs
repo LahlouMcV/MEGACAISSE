@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SlideModule : ControlModule
 {
@@ -9,11 +11,18 @@ public class SlideModule : ControlModule
     [SerializeField] Vector3 EndPosition;
     [SerializeField] GameObject StartPos;
     [SerializeField] GameObject EndPos;
+    [SerializeField] GameObject textfield;
+    [SerializeField] GameObject Jauge;
 
     private bool MovingSlider = false;
     private RaycastHit hit;
     //private Vector3 startMousePos;
     private Vector3 startPos;
+
+    private void Start()
+    {
+        textfield.GetComponent<TMP_Text>().text = Mathf.Round(InputMultiplier * 100).ToString() + "%";
+    }
 
     private void FixedUpdate()
     {
@@ -35,6 +44,9 @@ public class SlideModule : ControlModule
                 float inputValue = ((z - StartPosition.z) / (EndPosition.z - StartPosition.z)) * InputMultiplier;
                 this.ChangeInputValue(Mathf.Clamp(inputValue, 0,InputMultiplier));
 
+                //coucou!
+                Jauge.GetComponent<Image>().fillAmount = currentInputValue/ InputMultiplier;
+                textfield.GetComponent<TMP_Text>().text = Mathf.Round(currentInputValue * 100).ToString() + "%";
 
                 if (currentInputValue == 0) InputFeedback.material = RedLight;
                 else if (currentInputValue >= 1) InputFeedback.material = GreenLight;
