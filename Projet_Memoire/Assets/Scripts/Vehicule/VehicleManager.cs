@@ -98,7 +98,7 @@ public class VehicleManager : MonoBehaviour
 
     public void Defeat()
     {
-        SceneManager._SceneManager.LoadScene(0);
+        SceneManager._SceneManager.TriggerLoseCondition();
     }
 
 }

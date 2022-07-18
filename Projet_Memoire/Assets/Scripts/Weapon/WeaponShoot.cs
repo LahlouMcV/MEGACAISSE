@@ -8,6 +8,8 @@ public class WeaponShoot : MonoBehaviour
     [SerializeField] Camera WeaponCamera;
     [SerializeField] GameObject WeaponBullet;
     public FMODUnity.StudioEventEmitter SoundFeedback;
+    [SerializeField] ParticleSystem Muzzle1;
+    [SerializeField] ParticleSystem Muzzle2;
     RaycastHit hit;
     private bool Shot = true;
 
@@ -19,6 +21,8 @@ public class WeaponShoot : MonoBehaviour
         {
             Shot = false;
             SoundFeedback.Play();
+            Muzzle1.Play();
+            Muzzle2.Play();
             //Spawn Shot Feedback
             Invoke("SpawnExplosion", 0.25f);
             Invoke("Reload", _VehicleManager._VehicleStats.RateOfFire);
@@ -33,6 +37,8 @@ public class WeaponShoot : MonoBehaviour
 
     private void Reload()
     {
+        Muzzle1.Stop();
+        Muzzle2.Stop();
         Shot = true;
         hit = new RaycastHit();
     }
