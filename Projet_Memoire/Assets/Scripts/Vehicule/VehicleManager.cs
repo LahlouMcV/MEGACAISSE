@@ -18,7 +18,7 @@ public class VehicleManager : MonoBehaviour
     public float FrontSideHealth = 25f;
     public float BackSideHealth = 25f;
 
-
+    bool once = false;
     #region Health Management
     public void HurtVehicle(float amount)
     {
@@ -89,16 +89,17 @@ public class VehicleManager : MonoBehaviour
                     MainHealthPoints -= amount;
                 break;
         }
-        if(MainHealthPoints <= 0)
+        if(MainHealthPoints <= 0 && once == false)
         {
             Defeat();
+            once = true;
         }
     }
     #endregion
 
     public void Defeat()
     {
-        SceneManager._SceneManager.LoadScene(0);
+        SceneManager._SceneManager.TriggerLoseCondition();
     }
 
 }

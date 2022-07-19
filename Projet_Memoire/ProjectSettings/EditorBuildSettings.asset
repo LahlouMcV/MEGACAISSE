@@ -9,10 +9,31 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 20bb22b7fbcd8f84b8ef6996602c1901
   - enabled: 1
-    path: Assets/Scenes/MainLevel/MainLevel.unity
-    guid: 8dc146eef5e3ce149b0b32cbca12e83f
+    path: Assets/Scenes/LD/Circuit_Test/Section1-MainComp 1.unity
+    guid: d72d16a0b4c0fdb45a7c4c2585eb02e7
   - enabled: 1
-    path: Assets/Scenes/LD/Circuit_Test/LD_Circuit_Placeholder.unity
-    guid: 81800d9a52248ad4fab3c55fe174a16f
+    path: Assets/Scenes/LD/Circuit_Test/Section1-Limited1.unity
+    guid: 6f39982b41c9f2e479b010171684604a
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSlingshot.unity
+    guid: 9c9fca99fb0f4704392eeed96e55a142
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-JustTheSwitch.unity
+    guid: a0e8929ee28869040b0de6183125b7cd
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-Limited2.unity
+    guid: b1dead72cfacff446971f7ad00d605b3
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-OneOfEach.unity
+    guid: 339dc7780ab68d946af385f7454a401e
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSwitchs.unity
+    guid: ccd0be8f7d7b9cb46ae5a0db097701a3
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-2buts2Swit.unity
+    guid: 04e5b3436ce3dbe4483bbf6535abea57
+  - enabled: 1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSlider.unity
+    guid: dfbf4565c954c0140b52c608f235c6b3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

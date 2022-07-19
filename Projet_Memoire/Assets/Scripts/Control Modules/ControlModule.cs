@@ -18,7 +18,8 @@ public class ControlModule : MonoBehaviour
     public MeshRenderer InputFeedback;
     public Material GreenLight;
     public Material RedLight;
-
+    public FMODUnity.StudioEventEmitter ActivateSound;
+    public FMODUnity.StudioEventEmitter DeactivateSound;
 
     public virtual float InputValue()
     {

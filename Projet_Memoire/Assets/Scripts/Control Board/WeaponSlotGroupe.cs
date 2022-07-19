@@ -13,4 +13,5 @@ public class WeaponSlotGroupe
 
     [Header("Shooting Functions")]
     public Slot Shoot;
+
 }

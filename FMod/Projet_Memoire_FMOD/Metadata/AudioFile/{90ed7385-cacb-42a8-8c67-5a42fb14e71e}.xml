@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{90ed7385-cacb-42a8-8c67-5a42fb14e71e}">
+		<property name="assetPath">
+			<value>Zap01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1771201814058956</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{9f16a6cd-7483-4b06-9530-691115c0c347}</destination>
+		</relationship>
+	</object>
+</objects>

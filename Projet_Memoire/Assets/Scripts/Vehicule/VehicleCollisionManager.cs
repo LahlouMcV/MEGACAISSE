@@ -28,12 +28,12 @@ public class VehicleCollisionManager : MonoBehaviour
             case HitBoxSide.Down:
                 break;
             case HitBoxSide.Left:
-                aimPosition = this.transform.position + this.transform.right * 2;
+                aimPosition = this.transform.position + this.transform.right * 5;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(30, this.transform.up);
                 OnCollidedWithLeft.Invoke();
                 break;
             case HitBoxSide.Right:
-                aimPosition = this.transform.position - this.transform.right * 2;
+                aimPosition = this.transform.position - this.transform.right * 5;
                 aimRotation = this.transform.rotation * Quaternion.AngleAxis(-30, this.transform.up);
                 OnCollidedWithRight.Invoke();
                 break;
@@ -66,7 +66,7 @@ public class VehicleCollisionManager : MonoBehaviour
                             i = -1;
                         }
                         aimPosition = this.transform.position - this.transform.forward * 2;
-                        aimPosition = new Vector3(aimPosition.x, 5, aimPosition.z);
+                        aimPosition = new Vector3(aimPosition.x, this.transform.position.y, aimPosition.z);
                         aimRotation = this.transform.rotation * Quaternion.AngleAxis(30 * i, this.transform.up);
                     }
                 }
@@ -101,7 +101,7 @@ public class VehicleCollisionManager : MonoBehaviour
                             i = -1;
                         }
                         aimPosition = this.transform.position + this.transform.forward * 2;
-                        aimPosition = new Vector3(aimPosition.x, 5, aimPosition.z);
+                        aimPosition = new Vector3(aimPosition.x, this.transform.position.y, aimPosition.z);
                         aimRotation = this.transform.rotation * Quaternion.AngleAxis(30 * i, this.transform.up);
                     }
                 }
@@ -116,6 +116,7 @@ public class VehicleCollisionManager : MonoBehaviour
         Debug.Log("Obstacle hit " + side + " side");
         Obstacle hitObstacle = obstacle.GetComponent<Obstacle>();
         _VehicleManager.HurtSide(hitObstacle.Damage, side);
+        _VehicleManager._VehicleSoundFeedback.HitObstacle(side);
         switch (side)
         {
             case HitBoxSide.Up:
