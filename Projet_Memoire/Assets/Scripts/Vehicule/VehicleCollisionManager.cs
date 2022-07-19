@@ -116,6 +116,7 @@ public class VehicleCollisionManager : MonoBehaviour
         Debug.Log("Obstacle hit " + side + " side");
         Obstacle hitObstacle = obstacle.GetComponent<Obstacle>();
         _VehicleManager.HurtSide(hitObstacle.Damage, side);
+        _VehicleManager._VehicleSoundFeedback.HitObstacle(side);
         switch (side)
         {
             case HitBoxSide.Up:

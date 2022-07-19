@@ -9,31 +9,31 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 20bb22b7fbcd8f84b8ef6996602c1901
   - enabled: 1
-    path: Assets/Scenes/MainLevel/MainLevel.unity
-    guid: 8dc146eef5e3ce149b0b32cbca12e83f
+    path: Assets/Scenes/LD/Circuit_Test/Section1-MainComp 1.unity
+    guid: d72d16a0b4c0fdb45a7c4c2585eb02e7
   - enabled: 1
-    path: Assets/Scenes/Compos/boutons + switchs.unity
-    guid: 0ec379d1acc4c5a44b159370b67efd11
+    path: Assets/Scenes/LD/Circuit_Test/Section1-Limited1.unity
+    guid: 6f39982b41c9f2e479b010171684604a
   - enabled: 1
-    path: Assets/Scenes/Compos/full slider.unity
-    guid: 96d6155dd3f2145449e10561a9f1f608
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSlingshot.unity
+    guid: 9c9fca99fb0f4704392eeed96e55a142
   - enabled: 1
-    path: Assets/Scenes/Compos/full slingshot.unity
-    guid: c90a1e0ac327cd348b225ddf76b99c34
+    path: Assets/Scenes/LD/Circuit_Test/Section1-JustTheSwitch.unity
+    guid: a0e8929ee28869040b0de6183125b7cd
   - enabled: 1
-    path: Assets/Scenes/Compos/full switchs.unity
-    guid: bef0979813c625a4690f22dad630301c
+    path: Assets/Scenes/LD/Circuit_Test/Section1-Limited2.unity
+    guid: b1dead72cfacff446971f7ad00d605b3
   - enabled: 1
-    path: Assets/Scenes/Compos/limited.unity
-    guid: 6976065de95b3cf4b87aa593ddf4ffc1
+    path: Assets/Scenes/LD/Circuit_Test/Section1-OneOfEach.unity
+    guid: 339dc7780ab68d946af385f7454a401e
   - enabled: 1
-    path: Assets/Scenes/Compos/limited2.unity
-    guid: 6c4ae3c1c3a632b42b6fdfe7d520469f
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSwitchs.unity
+    guid: ccd0be8f7d7b9cb46ae5a0db097701a3
   - enabled: 1
-    path: Assets/Scenes/Compos/one of each.unity
-    guid: 61297e20ab2f166498e9e92043fbe701
+    path: Assets/Scenes/LD/Circuit_Test/Section1-2buts2Swit.unity
+    guid: 04e5b3436ce3dbe4483bbf6535abea57
   - enabled: 1
-    path: Assets/Scenes/Compos/standard.unity
-    guid: a79fb573b38fd7845a19d0b5811644f6
+    path: Assets/Scenes/LD/Circuit_Test/Section1-FullSlider.unity
+    guid: dfbf4565c954c0140b52c608f235c6b3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7, type: 2}

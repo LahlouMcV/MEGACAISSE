@@ -108,6 +108,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 812
+--- !u!114 &-5730187390413566797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/03.PlayerActions/ClickDud
+  m_EditorClassIdentifier: 
+  Path: event:/03.PlayerActions/ClickDud
+  Guid:
+    Data1: -1550928258
+    Data2: 1107573417
+    Data3: -2055442795
+    Data4: 93221477
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-5720372417529006137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,11 +204,38 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637936767289541883
+  lastModified: 637937811546111550
   FileSizes:
   - Name: Desktop
-    Value: 4308704
+    Value: 4310016
   Exists: 1
+--- !u!114 &-3327016224686323726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/06.Ambiances/Music/MainMenuMusic
+  m_EditorClassIdentifier: 
+  Path: event:/06.Ambiances/Music/MainMenuMusic
+  Guid:
+    Data1: -1293103547
+    Data2: 1296568935
+    Data3: -891537253
+    Data4: -670517610
+  Banks:
+  - {fileID: -3592886030099116022}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2363331211308944571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,10 +251,10 @@ MonoBehaviour:
   Path: ../FMod/Projet_Memoire_FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637936767289571883
+  lastModified: 637937811546141556
   FileSizes:
   - Name: Desktop
-    Value: 2170
+    Value: 2272
   Exists: 1
 --- !u!114 &-1495665757876216016
 MonoBehaviour:
@@ -292,12 +346,14 @@ MonoBehaviour:
   - {fileID: -1303162083006138324}
   - {fileID: 298696178089012384}
   - {fileID: 346970990359376320}
+  - {fileID: -5730187390413566797}
+  - {fileID: -3327016224686323726}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3592886030099116022}
   StringsBanks:
   - {fileID: -2363331211308944571}
-  cacheTime: 637936767289571883
+  cacheTime: 637937811546141556
   cacheVersion: 10
 --- !u!114 &298696178089012384
 MonoBehaviour:

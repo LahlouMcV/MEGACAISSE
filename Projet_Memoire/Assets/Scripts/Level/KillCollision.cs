@@ -8,7 +8,7 @@ public class KillCollision : MonoBehaviour
     {
         if(other.CompareTag("Vehicle"))
         {
-            //SceneManager._SceneManager
+            SceneManager._SceneManager.TriggerLoseCondition();
         }
     }
 }

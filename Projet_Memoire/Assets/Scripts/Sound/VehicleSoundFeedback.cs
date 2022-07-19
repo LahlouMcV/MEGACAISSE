@@ -10,6 +10,10 @@ public class VehicleSoundFeedback : MonoBehaviour
     [SerializeField] FMODUnity.StudioEventEmitter FrontWallHit;
     [SerializeField] FMODUnity.StudioEventEmitter BackWallHit;
     [SerializeField] FMODUnity.StudioEventEmitter GroundHit;
+    [SerializeField] FMODUnity.StudioEventEmitter ObstacleLeftHit;
+    [SerializeField] FMODUnity.StudioEventEmitter ObstacleRightHit;
+    [SerializeField] FMODUnity.StudioEventEmitter ObstacleFrontHit;
+    [SerializeField] FMODUnity.StudioEventEmitter ObstacleBackHit;
 
     public void SetMotorParam(float amount)
     {
@@ -31,6 +35,25 @@ public class VehicleSoundFeedback : MonoBehaviour
                 break;
             case VehicleCollisionManager.HitBoxSide.Back:
                 BackWallHit.Play();
+                break;
+        }
+    }
+
+    public void HitObstacle(VehicleCollisionManager.HitBoxSide side)
+    {
+        switch (side)
+        {
+            case VehicleCollisionManager.HitBoxSide.Left:
+                ObstacleLeftHit.Play();
+                break;
+            case VehicleCollisionManager.HitBoxSide.Right:
+                ObstacleRightHit.Play();
+                break;
+            case VehicleCollisionManager.HitBoxSide.Forward:
+                ObstacleFrontHit.Play();
+                break;
+            case VehicleCollisionManager.HitBoxSide.Back:
+                ObstacleBackHit.Play();
                 break;
         }
     }

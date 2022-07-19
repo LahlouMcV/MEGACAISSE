@@ -43,6 +43,10 @@ public class SceneManager : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
+        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        image.color = new Color(0, 0, 0, 0);
+        UnityEngine.UI.Image img = LoseFeedback.GetComponent<UnityEngine.UI.Image>();
+        img.color = new Color(0, 0, 0, 0);
     }
 
     public void LoadScene(int sceneNum)
@@ -79,7 +83,7 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator LossAnimation()
     {
-        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        UnityEngine.UI.Image image = LoseFeedback.GetComponent<UnityEngine.UI.Image>();
         float a = 0;
         while (true)
         {
