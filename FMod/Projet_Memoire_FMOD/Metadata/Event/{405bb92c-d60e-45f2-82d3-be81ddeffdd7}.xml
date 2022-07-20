@@ -377,6 +377,7 @@
 	<object class="MixerBusEffectChain" id="{70468b3e-9919-42cd-b012-3a5c923114cb}">
 		<relationship name="effects">
 			<destination>{24f5c933-e10f-47ee-8754-544d6725c09c}</destination>
+			<destination>{115f73f7-d8bb-4cfe-a69e-40eff0ce3465}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{1ba6cb9d-008f-4ed9-93ce-bc1251376fed}" />
@@ -420,9 +421,6 @@
 	<object class="ThreeEQEffect" id="{658a2d8d-6c8f-47c1-a8c6-fa254bd05804}">
 		<property name="midGain">
 			<value>-0.5</value>
-		</property>
-		<property name="highGain">
-			<value>-45</value>
 		</property>
 	</object>
 	<object class="SpatialiserEffect" id="{f2d74ec8-d1e2-4859-852b-8d0b5e34b558}" />
@@ -480,6 +478,11 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{24f5c933-e10f-47ee-8754-544d6725c09c}" />
+	<object class="ThreeEQEffect" id="{115f73f7-d8bb-4cfe-a69e-40eff0ce3465}">
+		<property name="highGain">
+			<value>-19.5</value>
+		</property>
+	</object>
 	<object class="Automator" id="{6f1c6b3f-dc8e-42c3-bdfc-b47bc0820c16}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>pitch</value>

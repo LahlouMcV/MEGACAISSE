@@ -8,7 +8,7 @@
 			<value>Mecha_Interior</value>
 		</property>
 		<property name="outputFormat">
-			<value>3</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{b12c65f1-5f62-4385-ad07-bc434a259262}</destination>
@@ -88,6 +88,12 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{c81c75c5-520c-4802-9c36-9855cc1eaeaa}">
+		<property name="volume">
+			<value>-1</value>
+		</property>
+		<property name="overridingInputFormat">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{a4fa7509-884a-47ba-9bff-9679aaaf257b}</destination>
 		</relationship>

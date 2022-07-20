@@ -11,6 +11,11 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField] GameObject VictoryFeedback;
     [SerializeField] GameObject LoseFeedback;
+    [SerializeField] FMODUnity.StudioEventEmitter VictorySound;
+    [SerializeField] FMODUnity.StudioEventEmitter LoseSound;
+
+    bool once = false;
+    bool twonce = false;
 
     private void Awake()
     {
@@ -43,6 +48,12 @@ public class SceneManager : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(0);
         }
+        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        image.color = new Color(0, 0, 0, 0);
+        UnityEngine.UI.Image img = LoseFeedback.GetComponent<UnityEngine.UI.Image>();
+        img.color = new Color(0, 0, 0, 0);
+        once = false;
+        twonce = false;
     }
 
     public void LoadScene(int sceneNum)
@@ -52,16 +63,28 @@ public class SceneManager : MonoBehaviour
 
     public void TriggerWinCondition()
     {
-        Debug.Log("Triggered Win");
-        StartCoroutine(VictoryAnimation());
-        Invoke("GoToMainMenu", 2.5f);
+        if(once == false)
+        {
+            once = true;
+            Debug.Log("Triggered Win");
+            StartCoroutine(VictoryAnimation());
+            VictorySound.Play();
+            Invoke("GoToMainMenu", 5f);
+        }
+        
     }
 
     public void TriggerLoseCondition()
     {
-        Debug.Log("Triggered Loss");
-        StartCoroutine(LossAnimation());
-        Invoke("GoToMainMenu", 2.5f);
+        if (twonce == false)
+        {
+            twonce = true;
+            Debug.Log("Triggered Loss");
+            StartCoroutine(LossAnimation());
+            LoseSound.Play();
+            Invoke("GoToMainMenu", 5f);
+        }
+        
     }
 
     IEnumerator VictoryAnimation()
@@ -79,7 +102,7 @@ public class SceneManager : MonoBehaviour
 
     IEnumerator LossAnimation()
     {
-        UnityEngine.UI.Image image = VictoryFeedback.GetComponent<UnityEngine.UI.Image>();
+        UnityEngine.UI.Image image = LoseFeedback.GetComponent<UnityEngine.UI.Image>();
         float a = 0;
         while (true)
         {

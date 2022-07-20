@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 2223348416684158438}
   - component: {fileID: 2223348416684158441}
   - component: {fileID: 1271917507626524212}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Controller_Module
   m_TagString: Controller_Module
   m_Icon: {fileID: 0}
@@ -368,8 +368,8 @@ MonoBehaviour:
   EndPosition: {x: -0.04, y: 0.055, z: 0.25}
   StartPos: {fileID: 1521383758153900914}
   EndPos: {fileID: 6400838888072648630}
-  textfieldSpeed: {fileID: 946159111035424217}
-  JaugeSpeed: {fileID: 6704655020017277487}
+  textfield: {fileID: 0}
+  Jauge: {fileID: 0}
 --- !u!1 &3108494583979097647
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d1e4e68e94713d4390c23343dc45fa0, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7d1e4e68e94713d4390c23343dc45fa0, type: 3}
       propertyPath: m_TagString

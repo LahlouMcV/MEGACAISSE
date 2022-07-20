@@ -24,6 +24,10 @@ public class PlayerGrabAndDrop : MonoBehaviour
     [Header("Reference")]
     [SerializeField] private Transform ModuleHolder;
     [SerializeField] private Transform Vehicle;
+    [Header("Sound Feedback")]
+    [SerializeField] FMODUnity.StudioEventEmitter GrabModule;
+    [SerializeField] FMODUnity.StudioEventEmitter DropModule;
+    [SerializeField] FMODUnity.StudioEventEmitter ClickDud;
 
     private bool LeftClickHeld = false;
 
@@ -91,7 +95,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
         else
         {
-            Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
+            Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Control_Module"));
             if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
             {
                 module = ModuleInteractionHit.collider.GetComponent<ControlModule>();
@@ -106,6 +110,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
 
     private void LeftMouseButtonClicked()
     {
+        ClickDud.Play();
         if(Active)
         {
             if (Interactable != null && ObjectGrabbed == false)
@@ -116,6 +121,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
                 }
                 ObjectGrabbed = true;
                 Interactable.Rigidbody.isKinematic = true;
+                GrabModule.Play();
             }
             else if (ObjectGrabbed == true && HighlightedSlot == null)
             {
@@ -123,6 +129,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
                 Interactable.MainTransform.parent = Vehicle;
                 Interactable.Rigidbody.isKinematic = false;
                 Interactable = null;
+                DropModule.Play();
             }
             else if (ObjectGrabbed == true && HighlightedSlot != null && HighlightedSlot.ConnectedModule == null)
             {
@@ -136,6 +143,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
                 ObjectGrabbed = true;
                 Interactable.Rigidbody.isKinematic = true;
                 Interactable.linkedSlot.RemoveModule();
+                GrabModule.Play();
             }
         }
         else
@@ -143,7 +151,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
             if(module != null)
             {
                 //Debug.Break();
-                Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
+                Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Control_Module"));
                 if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
                 {
                     OriginalModuleInteractionHit = ModuleInteractionHit;
