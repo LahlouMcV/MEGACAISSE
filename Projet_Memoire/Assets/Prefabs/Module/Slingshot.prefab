@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 1180282817815572922}
   - component: {fileID: 8788831884976420059}
   - component: {fileID: 2346707682515354992}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: Controller_Module
   m_TagString: Controller_Module
   m_Icon: {fileID: 0}
@@ -1315,6 +1315,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 80e8abf50d83baa4c86959a8c12e77d3, type: 3}
       propertyPath: m_Name
       value: InteractModuleSlingshot
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 80e8abf50d83baa4c86959a8c12e77d3, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80e8abf50d83baa4c86959a8c12e77d3, type: 3}

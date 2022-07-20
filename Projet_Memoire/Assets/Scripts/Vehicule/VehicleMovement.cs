@@ -78,7 +78,7 @@ public class VehicleMovement : MonoBehaviour
         {
             DirectionVector += Mathf.Abs(input) * this.transform.right;
             ChangeMaxSpeed(input);
-            currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.deltaTime;
+            currentSpeed += input * vehicleManager._VehicleStats.Acceleration * Time.fixedDeltaTime;
             currentSpeed = Mathf.Clamp(currentSpeed, -currentMaxSpeed, currentMaxSpeed);
         }
     }
@@ -86,7 +86,7 @@ public class VehicleMovement : MonoBehaviour
     //Function that rotates the vehicle around the up axis
     public void Rotate(float input)
     {
-        float angleRotation = input * vehicleManager._VehicleStats.TurnSpeed * Time.deltaTime;
+        float angleRotation = input * vehicleManager._VehicleStats.TurnSpeed * Time.fixedDeltaTime;
         this.transform.rotation *= Quaternion.AngleAxis(angleRotation, Vector3.up);
     }
 

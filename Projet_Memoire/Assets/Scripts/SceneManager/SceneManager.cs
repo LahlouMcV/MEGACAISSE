@@ -11,6 +11,11 @@ public class SceneManager : MonoBehaviour
 
     [SerializeField] GameObject VictoryFeedback;
     [SerializeField] GameObject LoseFeedback;
+    [SerializeField] FMODUnity.StudioEventEmitter VictorySound;
+    [SerializeField] FMODUnity.StudioEventEmitter LoseSound;
+
+    bool once = false;
+    bool twonce = false;
 
     private void Awake()
     {
@@ -47,6 +52,8 @@ public class SceneManager : MonoBehaviour
         image.color = new Color(0, 0, 0, 0);
         UnityEngine.UI.Image img = LoseFeedback.GetComponent<UnityEngine.UI.Image>();
         img.color = new Color(0, 0, 0, 0);
+        once = false;
+        twonce = false;
     }
 
     public void LoadScene(int sceneNum)
@@ -56,16 +63,28 @@ public class SceneManager : MonoBehaviour
 
     public void TriggerWinCondition()
     {
-        Debug.Log("Triggered Win");
-        StartCoroutine(VictoryAnimation());
-        Invoke("GoToMainMenu", 2.5f);
+        if(once == false)
+        {
+            once = true;
+            Debug.Log("Triggered Win");
+            StartCoroutine(VictoryAnimation());
+            VictorySound.Play();
+            Invoke("GoToMainMenu", 5f);
+        }
+        
     }
 
     public void TriggerLoseCondition()
     {
-        Debug.Log("Triggered Loss");
-        StartCoroutine(LossAnimation());
-        Invoke("GoToMainMenu", 2.5f);
+        if (twonce == false)
+        {
+            twonce = true;
+            Debug.Log("Triggered Loss");
+            StartCoroutine(LossAnimation());
+            LoseSound.Play();
+            Invoke("GoToMainMenu", 5f);
+        }
+        
     }
 
     IEnumerator VictoryAnimation()

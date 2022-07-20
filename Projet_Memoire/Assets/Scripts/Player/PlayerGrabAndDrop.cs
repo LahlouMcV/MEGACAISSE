@@ -95,7 +95,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
         }
         else
         {
-            Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
+            Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Control_Module"));
             if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
             {
                 module = ModuleInteractionHit.collider.GetComponent<ControlModule>();
@@ -151,7 +151,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
             if(module != null)
             {
                 //Debug.Break();
-                Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Interactable"));
+                Physics.Raycast(_ray, out ModuleInteractionHit, Mathf.Infinity, LayerMask.GetMask("Control_Module"));
                 if (ModuleInteractionHit.collider != null && ModuleInteractionHit.collider.CompareTag("Controller_Module"))
                 {
                     OriginalModuleInteractionHit = ModuleInteractionHit;

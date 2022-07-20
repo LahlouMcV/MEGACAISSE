@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4403785849975164804}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7841608441454068040}
   - component: {fileID: 1735912931937362327}
   - component: {fileID: 4530986514558256111}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 5994397502807067318}
   - component: {fileID: 2376068977475295960}
   - component: {fileID: 3772856347272971420}
-  m_Layer: 5
+  m_Layer: 11
   m_Name: InputValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +484,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c7fe8368f844b24295d498443ea97de, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7c7fe8368f844b24295d498443ea97de, type: 3}
       propertyPath: m_IsActive
