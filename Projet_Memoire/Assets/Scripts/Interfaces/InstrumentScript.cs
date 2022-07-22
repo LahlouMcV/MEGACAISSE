@@ -19,8 +19,8 @@ public class InstrumentScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textfieldAssiette.GetComponent<TMP_Text>().text = Mathf.Round(VehicleTrans.rotation.z).ToString() + "°";
-        IconeAssiette.GetComponent<RectTransform>().eulerAngles.Set(0,0,VehicleTrans.rotation.z);
+        textfieldAssiette.GetComponent<TMP_Text>().text = Mathf.Round(VehicleTrans.rotation.eulerAngles.z).ToString() + "°";
+        IconeAssiette.GetComponent<RectTransform>().localRotation = Quaternion.Euler(new Vector3(0, 0, VehicleTrans.rotation.eulerAngles.z));
         textfieldAltitude.GetComponent<TMP_Text>().text = Mathf.Round(VehicleTrans.position.y).ToString() + " m";
     }
 }

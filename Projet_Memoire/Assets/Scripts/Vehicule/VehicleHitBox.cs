@@ -9,7 +9,6 @@ public class VehicleHitBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collided with " + other.name);
         if(other.CompareTag("Obstacle"))
         {
             _VehicleCollisionManager.CollidedWithObstacle(this.Side, other.transform);

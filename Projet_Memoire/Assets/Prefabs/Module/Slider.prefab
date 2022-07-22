@@ -368,8 +368,8 @@ MonoBehaviour:
   EndPosition: {x: -0.04, y: 0.055, z: 0.25}
   StartPos: {fileID: 1521383758153900914}
   EndPos: {fileID: 6400838888072648630}
-  textfield: {fileID: 0}
-  Jauge: {fileID: 0}
+  textfield: {fileID: 946159111035424217}
+  Jauge: {fileID: 6704655020017277487}
 --- !u!1 &3108494583979097647
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ public class PlayerGrabAndDrop : MonoBehaviour
         LeftClick.Disable();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         _ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
         //If in normal FPS controls mode

@@ -21,7 +21,7 @@ public class VehicleCollisionManager : MonoBehaviour
         if (HitTimer == false)
         {
             HitTimer = true;
-            Invoke("ChangeHitTimer", 0.5f);
+            Invoke("ChangeHitTimer", 0.1f);
             Vector3 aimPosition = this.transform.position;
             Quaternion aimRotation = this.transform.rotation;
             _VehicleManager.HurtSide(_VehicleManager._VehicleStats.DamageWhenWallCollision, side);
@@ -80,6 +80,7 @@ public class VehicleCollisionManager : MonoBehaviour
                     }
                     break;
             }
+            _VehicleManager._VehicleMovement.currentSpeed = Mathf.Clamp(_VehicleManager._VehicleMovement.currentSpeed, 0, 150);
             StartCoroutine(MoveVehicle(aimRotation, aimPosition));
             Invoke("StopTheCoroutines", 0.1f);
         }

@@ -17,7 +17,7 @@ public class JaugeVitesse : MonoBehaviour
     }
     void Update()
     {
-        textfieldSpeed.GetComponent<TMP_Text>().text = Mathf.Round(_VehicleManager._VehicleMovement.currentSpeed).ToString() + " km/h";
-        JaugeSpeed.GetComponent<Image>().fillAmount = (_VehicleManager._VehicleMovement.currentSpeed/ _VehicleManager._VehicleStats.MaxSpeed) + offsetJauge;
+        textfieldSpeed.GetComponent<TMP_Text>().text = Mathf.Abs(Mathf.Round(_VehicleManager._VehicleMovement.currentSpeed)).ToString() + " km/h";
+        JaugeSpeed.GetComponent<Image>().fillAmount = Mathf.Abs((_VehicleManager._VehicleMovement.currentSpeed/ _VehicleManager._VehicleStats.MaxSpeed)) + offsetJauge;
     }
 }
